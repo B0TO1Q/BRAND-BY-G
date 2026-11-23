@@ -78,32 +78,50 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacin
 
 /* cases */
 .case{padding:clamp(56px,8vw,112px) 0;color:var(--c-ink);background:var(--c-bg)}
-.case.haf{--c-bg:#1D3326;--c-ink:#F6F2E6;--c-acc:#CBB373;--c-rule:#38533F;--c-soft:#C9CFBF}
-.case.dani{--c-bg:#121A1D;--c-ink:#E9EEF0;--c-acc:#8FB1B8;--c-rule:#2A3639;--c-soft:#A3B1B5}
-.hd{display:flex;justify-content:space-between;align-items:baseline;gap:12px 24px;flex-wrap:wrap;border-bottom:1px solid var(--c-rule);padding-bottom:20px}
-.kind{font-size:15px;color:var(--c-acc);font-weight:600}
+.case.haf{--c-bg:#1D3326;--c-ink:#F6F2E6;--c-acc:#CBB373;--c-rule:#38533F;--c-soft:#C9CFBF;--c-on:#1D3326}
+.case.dani{--c-bg:#121A1D;--c-ink:#E9EEF0;--c-acc:#8FB1B8;--c-rule:#2A3639;--c-soft:#A3B1B5;--c-on:#121A1D}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap;border-bottom:1px solid var(--c-rule);padding-bottom:22px}
+.kind{font-size:15px;color:var(--c-acc);font-weight:600;margin:0 0 6px}
 .case h2{font-size:clamp(30px,4.6vw,52px)}
+.acts{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .tag{font-size:14px;border:1px solid var(--c-acc);color:var(--c-acc);padding:4px 12px;border-radius:99px;white-space:nowrap}
-.cgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,56px);margin-top:clamp(28px,4vw,48px);align-items:start}
-.case.dani .cgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.5fr)}
-.case.dani .shots{order:2}
-@media(max-width:900px){.cgrid,.case.dani .cgrid{grid-template-columns:minmax(0,1fr)}.case.dani .shots{order:0}}
-.shots{display:grid;gap:16px}
-.shots .br{position:relative}
-.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.36fr);gap:16px;align-items:end}
-.pair .ph{position:relative}
+.live{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:8px;background:var(--c-acc);color:var(--c-on);font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
+.live:hover{filter:brightness(1.08)}
+.live svg{width:14px;height:14px}
+.lead{font-family:var(--disp);font-weight:700;font-stretch:112%;letter-spacing:-.02em;font-size:clamp(22px,2.7vw,34px);line-height:1.15;max-width:34ch;margin:clamp(24px,3vw,36px) 0 clamp(24px,3vw,36px);text-wrap:balance}
+.viewer{display:grid;grid-template-columns:minmax(0,1fr) 232px;gap:28px;align-items:end}
+@media(max-width:860px){.viewer{grid-template-columns:minmax(0,1fr)}}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.tabs button{min-height:44px;padding:0 16px;border-radius:8px;border:1px solid var(--c-rule);background:transparent;color:var(--c-ink);font:500 15px/1 var(--text);cursor:pointer}
+.tabs button:hover{border-color:var(--c-acc)}
+.tabs button[aria-selected=true]{background:var(--c-ink);color:var(--c-bg);border-color:var(--c-ink)}
+.tabs button:focus-visible,.vp:focus-visible{outline:3px solid var(--c-acc);outline-offset:3px}
+.site{position:relative;border-radius:12px;overflow:hidden;background:#0E100E;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.site .bar{height:34px;display:flex;align-items:center;gap:6px;padding:0 14px;background:#24272A}
+.site .bar i{width:10px;height:10px;border-radius:50%;background:#555A5E;flex:none}
+.site .bar span{margin-left:10px;font-size:12px;color:#B5BABE;background:#33373B;border-radius:5px;padding:4px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vp{height:clamp(340px,46vw,600px);overflow-y:auto;background:#fff;scrollbar-width:thin}
+.vp img{display:block;width:100%;height:auto}
+.hint{position:absolute;right:14px;bottom:14px;display:flex;align-items:center;gap:8px;background:rgba(14,16,14,.84);color:#fff;font-size:13px;padding:8px 14px;border-radius:99px;pointer-events:none;transition:opacity .4s}
+.hint.gone{opacity:0}
+@media(hover:hover){.vp{overscroll-behavior:contain}}
+.phones{display:grid;gap:10px;justify-items:center}
+.phones .ph{position:relative;width:100%}
+@media(max-width:860px){.phones{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}.phones .cap{grid-column:1/-1}}
 .cap{font-size:13px;color:var(--c-soft);margin:6px 0 0}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);margin-top:clamp(36px,5vw,56px);align-items:start}
+@media(max-width:860px){.cgrid{grid-template-columns:minmax(0,1fr)}}
 .copy p{margin:0 0 16px;font-size:17px;max-width:62ch}
-.copy .big{font-family:var(--disp);font-size:clamp(22px,2.4vw,28px);line-height:1.2;font-weight:500;margin-bottom:22px}
-.built{list-style:none;padding:0;margin:8px 0 28px;display:grid;gap:12px}
+.built{list-style:none;padding:0;margin:0;display:grid;gap:14px}
 .built li{padding-left:22px;position:relative;font-size:16px}
+.built li strong{font-weight:600}
 .built li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--c-acc)}
 dl.spec{display:grid;grid-template-columns:auto minmax(0,1fr);margin:0;border-top:1px solid var(--c-rule);font-size:15px}
 dl.spec dt,dl.spec dd{margin:0;padding:10px 0;border-bottom:1px solid var(--c-rule)}
 dl.spec dt{color:var(--c-soft);padding-right:20px;white-space:nowrap}
+dl.spec a{color:var(--c-acc)}
 .swatch{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
 .note{font-size:13px;color:var(--c-soft);margin-top:14px}
-
 /* process */
 .band{padding:clamp(56px,8vw,112px) 0}
 .sec h2{font-size:clamp(30px,4.2vw,48px)}
@@ -167,9 +185,9 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <p class="where">George Blanchard Jr. · Plantsville, Connecticut</p>
     </div>
     <div class="stage" aria-hidden="true">
-      <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/hafele-d.jpg" alt=""></div>
-      <div class="br s2"><div class="bar"><i></i><i></i><i></i><span>Dani Hamm — Prints &amp; goods</span></div><img src="img/danishop-d.jpg" alt=""></div>
-      <div class="ph s3"><img src="img/hafele-m.jpg" alt=""></div>
+      <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/v2/hafele-home.webp" alt=""></div>
+      <div class="br s2"><div class="bar"><i></i><i></i><i></i><span>Dani Hamm — Prints &amp; goods</span></div><img src="img/v2/dani-shop.webp" alt=""></div>
+      <div class="ph s3"><img src="img/v2/hafele-m.webp" alt=""></div>
     </div>
   </div>
 </section>
@@ -179,34 +197,43 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
   <div class="wrap">
     <div class="hd">
       <div><p class="kind">Client build · Landscaping &amp; snow removal</p><h2 id="haf-h">Hafele Landscaping</h2></div>
-      <span class="tag">Draft with the owner</span>
+      <div class="acts"><span class="tag">Draft with the owner</span><a class="live" href="https://b0to1q.github.io/HAFELE/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+    </div>
+    <p class="lead">A quote in two taps, from the driveway — and a site as sharp as the stripes on their lawns.</p>
+    <div class="viewer">
+      <div>
+          <div class="tabs" role="tablist" aria-label="Hafele pages"><button type="button" role="tab" aria-selected="true" data-src="img/v2/hafele-home.webp" data-url="https://b0to1q.github.io/HAFELE/" data-alt="Full Hafele home page: striped lawn hero with a quote request panel, quick facts, six services with real job photos, the fifteen-town service area, a call-to-action band, Verse of the Day and footer">Home</button><button type="button" role="tab" aria-selected="false" data-src="img/v2/hafele-services.webp" data-url="https://b0to1q.github.io/HAFELE/services.html" data-alt="Full Hafele services page: each of six services with a job photo, what it includes and a quote button, then common questions">Services</button><button type="button" role="tab" aria-selected="false" data-src="img/v2/hafele-about.webp" data-url="https://b0to1q.github.io/HAFELE/about.html" data-alt="Full Hafele about and contact page">About &amp; contact</button></div>
+          <div class="site">
+            <div class="bar"><i></i><i></i><i></i><span class="url">b0to1q.github.io/HAFELE/</span></div>
+            <div class="vp" tabindex="0" aria-label="Hafele page preview, scrollable"><img src="img/v2/hafele-home.webp" alt="Full Hafele home page: striped lawn hero with a quote request panel, quick facts, six services with real job photos, the fifteen-town service area, a call-to-action band, Verse of the Day and footer"></div>
+            <span class="hint" aria-hidden="true">Scroll to explore the page</span>
+          </div>
+        </div>
+      <div class="phones">
+        <div class="ph"><img src="img/v2/hafele-m.webp" alt="Hafele home page on a phone, with Call, Text and Get a quote pinned to the bottom" loading="lazy"></div>
+        <div class="ph"><img src="img/v2/hafele-services-m.webp" alt="Hafele services page on a phone" loading="lazy"></div>
+        <p class="cap">On a phone</p>
+      </div>
     </div>
     <div class="cgrid">
-      <div class="shots">
-        <div class="pair">
-          <div><div class="br"><div class="bar"><i></i><i></i><i></i><span>Home · quote request</span></div><img src="img/hafele-d.jpg" alt="Hafele home page: striped front lawn behind the headline Precision in every cut, Strength in every season, with a quote request panel on the right"></div></div>
-          <div class="ph"><img src="img/hafele-m.jpg" alt="Hafele home page on a phone, with Call, Text and Get a quote buttons pinned to the bottom"></div>
-        </div>
-        <div class="br"><div class="bar"><i></i><i></i><i></i><span>Services</span></div><img src="img/hafele-services.jpg" alt="Hafele services section with real job photos for lawn care, landscape maintenance and hydroseeding" loading="lazy"></div>
-        <p class="cap">Real job photos from the crew, straightened and cropped. Live in the client's forest green and gold.</p>
-      </div>
       <div class="copy">
-        <p class="big">A quote in two taps, from the driveway.</p>
-        <p>Hafele is a Burlington, CT crew covering lawns, landscapes, hydroseeding, gutters and plowing across fifteen towns. The goal: look as sharp online as their stripes look on a lawn — classic, professional, built to last — and turn visits into quote requests.</p>
+        <p>Hafele is a Burlington, CT crew covering lawns, landscapes, hydroseeding, gutters and plowing across fifteen towns. The brief: classic, professional, built to last — and turn visits into quote requests.</p>
         <ul class="built">
-          <li>Two-step quote request: pick a service, a day and a time window (snow skips the day), then name, cell and address.</li>
-          <li>Send opens a text to the owner with everything filled in, with an email fallback.</li>
-          <li>Call, Text and Get a quote pinned to the bottom of the screen on phones.</li>
-          <li>Built on their own logo and brand colours, with a walk-around video and a full service-area list.</li>
+          <li><strong>Two-step quote request.</strong> Pick a service, a day and a time window (snow skips the day), then name, cell and address. Send opens a text to the owner with everything filled in, with an email fallback.</li>
+          <li><strong>Call, Text and Get a quote</strong> pinned to the bottom of the screen on phones.</li>
+          <li><strong>Three pages:</strong> Home, Services with a common-questions section, and About &amp; Contact.</li>
+          <li><strong>Real job photos</strong> from the crew, straightened and cropped, plus a walk-around video.</li>
+          <li><strong>Small touches:</strong> a soft sun glow and ground fog on the hero, sections that fade up as you scroll, and a Verse of the Day strip above the footer.</li>
         </ul>
-        <dl class="spec">
-          <dt>Location</dt><dd>Burlington, CT</dd>
-          <dt>Brand</dt><dd><span class="swatch" style="background:#1D3326"></span>Forest green · <span class="swatch" style="background:#CBB373"></span>Gold</dd>
-          <dt>Pages</dt><dd>One-page site: services, area, quote</dd>
-          <dt>Built with</dt><dd>Hand-written HTML, CSS and JavaScript — fast, no page builder</dd>
-          <dt>Next</dt><dd>Requests flow straight into Jobber</dd>
-        </dl>
       </div>
+      <dl class="spec">
+        <dt>Location</dt><dd>Burlington, CT</dd>
+        <dt>Brand</dt><dd><span class="swatch" style="background:#1D3326"></span>Forest green · <span class="swatch" style="background:#CBB373"></span>Gold, on their own logo</dd>
+        <dt>Pages</dt><dd>Home · Services · About &amp; Contact</dd>
+        <dt>Built with</dt><dd>Hand-written HTML, CSS and JavaScript — fast, no page builder</dd>
+        <dt>Next</dt><dd>Requests flow straight into Jobber</dd>
+        <dt>Live</dt><dd><a href="https://b0to1q.github.io/HAFELE/" target="_blank" rel="noopener">b0to1q.github.io/HAFELE</a></dd>
+      </dl>
     </div>
   </div>
 </section>
@@ -215,33 +242,42 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
   <div class="wrap">
     <div class="hd">
       <div><p class="kind">Spec concept · Wildlife photography</p><h2 id="dani-h">Dani Hamm</h2></div>
-      <span class="tag">Spec concept</span>
+      <div class="acts"><span class="tag">Spec concept</span><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+    </div>
+    <p class="lead">A gallery that feels like being out there at first light — and a shop that pays for the gas.</p>
+    <div class="viewer">
+      <div>
+          <div class="tabs" role="tablist" aria-label="Dani Hamm pages"><button type="button" role="tab" aria-selected="true" data-src="img/v2/dani-home.webp" data-url="https://b0to1q.github.io/DANIHAMM/" data-alt="Full Dani Hamm home page: name over a misty hero, three full-screen scenes (First light, Into the fog, The moment), then the filterable portfolio grid">Home</button><button type="button" role="tab" aria-selected="false" data-src="img/v2/dani-shop.webp" data-url="https://b0to1q.github.io/DANIHAMM/shop.html" data-alt="Dani Hamm shop page: Prints and goods, eight products in a grid">Shop</button><button type="button" role="tab" aria-selected="false" data-src="img/v2/dani-product.webp" data-url="https://b0to1q.github.io/DANIHAMM/product.html?item=mug" data-alt="Product page for a mug: pick the photo, options and quantity">Product</button><button type="button" role="tab" aria-selected="false" data-src="img/v2/dani-about.webp" data-url="https://b0to1q.github.io/DANIHAMM/about.html" data-alt="Dani Hamm about page">About</button><button type="button" role="tab" aria-selected="false" data-src="img/v2/dani-contact.webp" data-url="https://b0to1q.github.io/DANIHAMM/contact.html" data-alt="Dani Hamm contact page with an inquiry form">Contact</button></div>
+          <div class="site">
+            <div class="bar"><i></i><i></i><i></i><span class="url">b0to1q.github.io/DANIHAMM/</span></div>
+            <div class="vp" tabindex="0" aria-label="Dani Hamm page preview, scrollable"><img src="img/v2/dani-home.webp" alt="Full Dani Hamm home page: name over a misty hero, three full-screen scenes (First light, Into the fog, The moment), then the filterable portfolio grid"></div>
+            <span class="hint" aria-hidden="true">Scroll to explore the page</span>
+          </div>
+        </div>
+      <div class="phones">
+        <div class="ph"><img src="img/v2/dani-m.webp" alt="Dani Hamm home page on a phone" loading="lazy"></div>
+        <div class="ph"><img src="img/v2/dani-shop-m.webp" alt="Dani Hamm shop on a phone" loading="lazy"></div>
+        <p class="cap">On a phone</p>
+      </div>
     </div>
     <div class="cgrid">
-      <div class="shots">
-        <div class="pair">
-          <div><div class="br"><div class="bar"><i></i><i></i><i></i><span>Home</span></div><img src="img/dani-d.jpg" alt="Dani Hamm home page: the name in huge condensed capitals over a misty blue-grey hero, with adventure + nature + wildlife beneath" loading="lazy"></div></div>
-          <div class="ph"><img src="img/dani-m.jpg" alt="Dani Hamm home page on a phone" loading="lazy"></div>
-        </div>
-        <div class="br"><div class="bar"><i></i><i></i><i></i><span>Shop · Prints &amp; goods</span></div><img src="img/danishop-d.jpg" alt="Shop page titled Prints and goods with a grid of products: fine art print, canvas wrap, framed print, metal print" loading="lazy"></div>
-        <div class="br"><div class="bar"><i></i><i></i><i></i><span>Product · Mug</span></div><img src="img/dani-product.jpg" alt="Mug product page: pick which photo goes on it from a grid of prints" loading="lazy"></div>
-        <p class="cap">Colour blocks stand in for Dani's photos until she supplies her own.</p>
-      </div>
       <div class="copy">
-        <p class="big">A gallery that feels like being out there at first light — and a shop that pays for the gas.</p>
-        <p>A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Her work does the talking: dark, cinematic, quiet type, and the photos given the whole screen.</p>
+        <p>A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Dark, cinematic, quiet type, and the photos given the whole screen. Colour blocks stand in for her photos until she supplies her own.</p>
         <ul class="built">
-          <li>Three full-screen scroll scenes — first light, fog, golden hour — leading into the work.</li>
-          <li>Portfolio filtered by birds, mammals, landscapes and concerts.</li>
-          <li>Shop with eight product types: prints, canvas, framed, metal, mugs, postcards, calendars and tees.</li>
-          <li>Product pages where the buyer picks the photo, size, colour and quantity, with a working cart.</li>
-          <li>About and contact pages with an inquiry form.</li>
+          <li><strong>Three full-screen scenes</strong> — first light, fog, the moment — that lead into the work.</li>
+          <li><strong>Portfolio</strong> filtered by birds, mammals, landscapes and concerts.</li>
+          <li><strong>Shop with eight products:</strong> prints, canvas, framed, metal, mugs, postcards, calendars and tees.</li>
+          <li><strong>Product pages</strong> where the buyer picks the photo, size, colour and quantity, with a working cart.</li>
+          <li><strong>About and contact</strong> pages with an inquiry form.</li>
         </ul>
+      </div>
+      <div>
         <dl class="spec">
-          <dt>Pages</dt><dd>Home, Shop, Product, About, Contact</dd>
+          <dt>Pages</dt><dd>Home · Shop · Product · About · Contact</dd>
           <dt>Type</dt><dd>Anton · Italiana · DM Sans</dd>
-          <dt>Built with</dt><dd>HTML, CSS and JavaScript; layout adapts to any screen; motion turns off for visitors who prefer less</dd>
+          <dt>Built with</dt><dd>HTML, CSS and JavaScript; adapts to any screen; motion turns off for visitors who prefer less</dd>
           <dt>Next</dt><dd>Real photos, checkout and a print-on-demand partner</dd>
+          <dt>Live</dt><dd><a href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">b0to1q.github.io/DANIHAMM</a></dd>
         </dl>
         <p class="note">Not affiliated with or approved by Dani Hamm.</p>
       </div>
@@ -304,5 +340,31 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 </main>
 
 <footer><div class="wrap"><span><strong style="font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.035em;color:var(--ink)">Branded by G<span class="dot">.</span></strong> · Built right. Owned by you.</span><span>© 2026 George Blanchard Jr.</span></div></footer>
+<script>
+{
+  for (const sec of document.querySelectorAll('.case')) {
+    const tabs = [...sec.querySelectorAll('.tabs button')];
+    const vp = sec.querySelector('.vp'), img = vp.querySelector('img');
+    const url = sec.querySelector('.site .url'), hint = sec.querySelector('.hint');
+    const pick = (b, focus) => {
+      tabs.forEach(t => t.setAttribute('aria-selected', t === b ? 'true' : 'false'));
+      img.src = b.dataset.src; img.alt = b.dataset.alt;
+      url.textContent = b.dataset.url.replace('https://', '');
+      vp.scrollTop = 0; hint.classList.remove('gone');
+      if (focus) b.focus();
+    };
+    tabs.forEach((b, i) => {
+      b.addEventListener('click', () => pick(b));
+      b.addEventListener('keydown', e => {
+        const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+        if (d) { e.preventDefault(); pick(tabs[(i + d + tabs.length) % tabs.length], true); }
+      });
+    });
+    vp.addEventListener('scroll', () => { if (vp.scrollTop > 40) hint.classList.add('gone'); }, { passive: true });
+  }
+  const pre = () => document.querySelectorAll('.tabs button').forEach(b => { const i = new Image(); i.src = b.dataset.src; });
+  if ('requestIdleCallback' in window) requestIdleCallback(pre); else setTimeout(pre, 2000);
+}
+</script>
 </body>
 </html>

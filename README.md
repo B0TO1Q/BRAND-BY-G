@@ -7,7 +7,7 @@ Features the Hafele Landscaping build and the Dani Hamm spec concept, plus proce
 ## Files
 
 - `index.html`: the whole page (HTML, CSS, no build step)
-- `img/`: screenshots of the featured sites
+- `img/v2/`: full-page and phone screenshots of the featured sites (re-shoot when those sites change)
 
 ## Go live
 
