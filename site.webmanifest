@@ -1,0 +1,8 @@
+{
+  "name": "Brand by G",
+  "short_name": "BBG.",
+  "icons": [{ "src": "icon-512.png", "sizes": "512x512", "type": "image/png" }],
+  "theme_color": "#2A2D2B",
+  "background_color": "#2A2D2B",
+  "display": "browser"
+}
