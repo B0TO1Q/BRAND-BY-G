@@ -97,6 +97,7 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacin
 .case{padding:clamp(56px,8vw,104px) 0;color:var(--c-ink);background:var(--c-bg)}
 .case.haf{--c-bg:#1D3326;--c-ink:#F6F2E6;--c-acc:#CBB373;--c-rule:#38533F;--c-soft:#C9CFBF;--c-on:#1D3326}
 .case.dani{--c-bg:#121A1D;--c-ink:#E9EEF0;--c-acc:#8FB1B8;--c-rule:#2A3639;--c-soft:#A3B1B5;--c-on:#121A1D}
+.case.rei{--c-bg:#0A0B0D;--c-ink:#F3F3F1;--c-acc:#FF3D2E;--c-rule:#262A31;--c-soft:#A3A7AE;--c-on:#0A0B0D}
 .hd{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap;border-bottom:1px solid var(--c-rule);padding-bottom:22px}
 .kind{font-size:15px;color:var(--c-acc);font-weight:600;margin:0 0 6px}
 .case h2{font-size:clamp(30px,4.6vw,52px)}
@@ -237,7 +238,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <section class="work" id="work" aria-labelledby="work-h">
   <div class="wrap">
     <h2 id="work-h" style="font-size:clamp(30px,4.2vw,48px)">Work</h2>
-    <p class="sub">Every page of every site. Tap one to open it full size and scroll through it.</p>
+    <p class="sub">Three sites, twelve views. Tap one to open it full size and scroll through it.</p>
     <div class="grid">
       <button class="tile" type="button" data-i="0" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Home page">
         <span class="shot"><img src="img/v3/t-hafele-home.webp?v=4" alt="" loading="lazy"></span>
@@ -270,6 +271,22 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <button class="tile" type="button" data-i="7" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Contact page">
         <span class="shot bgdani"><img src="img/v3/t-dani-contact.webp?v=4" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Contact</span></span>
+      </button>
+      <button class="tile" type="button" data-i="8" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Home">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-top.webp?v=4" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Home</span></span>
+      </button>
+      <button class="tile" type="button" data-i="9" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Package builder">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-builder.webp?v=4" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Package builder</span></span>
+      </button>
+      <button class="tile" type="button" data-i="10" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Membership">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-club.webp?v=4" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Membership</span></span>
+      </button>
+      <button class="tile" type="button" data-i="11" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Booking">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-book.webp?v=4" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Booking</span></span>
       </button>
     </div>
   </div>
@@ -335,6 +352,39 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
           <dt>Live</dt><dd><a href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">b0to1q.github.io/DANIHAMM</a></dd>
         </dl>
         <p class="note">Not affiliated with or approved by Dani Hamm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case rei" aria-labelledby="rei-h">
+  <div class="wrap">
+    <div class="hd">
+      <div><p class="kind">Mobile detailing · Luxury vehicles</p><h2 id="rei-h">Reillo Private Detail</h2></div>
+      <div class="acts"><span class="tag">In progress</span><button class="open" type="button" data-open="8">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+    </div>
+    <p class="lead">Showroom gloss, delivered — with a builder that prices the detail before the first phone call.</p>
+    <div class="cgrid">
+      <div class="copy">
+        <p>A luxury mobile detailing service: paint correction, ceramic coatings and concierge interior care at the client's home or office. The brief: super sleek, interactive and adaptive.</p>
+        <ul class="built">
+          <li><strong>Package builder</strong> with live pricing by vehicle size, add-ons and estimated time on site.</li>
+          <li><strong>A cinematic first screen:</strong> an animated REILLO wordmark, a film light-leak background and slow-scrolling service tickers.</li>
+          <li><strong>Scroll-driven effects:</strong> a reading progress bar, sections that rise in, a "Haze → Mirror" strike-through, and a sideways "how a visit works" section.</li>
+          <li><strong>The Reillo Club</strong> membership plans, common questions, and a booking request with arrival windows.</li>
+          <li><strong>Motion turns off</strong> for visitors who prefer less, and older browsers get a clean static layout.</li>
+        </ul>
+      </div>
+      <div>
+        <dl class="spec">
+          <dt>Pages</dt><dd>One page: builder, results, process, membership, questions, booking</dd>
+          <dt>Brand</dt><dd><span class="swatch" style="background:#0A0B0D"></span>Black · <span class="swatch" style="background:#FF3D2E"></span>Signal red</dd>
+          <dt>Type</dt><dd>Jost · Inter</dd>
+          <dt>Built with</dt><dd>HTML, CSS and JavaScript in one file</dd>
+          <dt>Next</dt><dd>Real prices and contact details; connect the booking form</dd>
+          <dt>Live</dt><dd><a href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">b0to1q.github.io/REILLO</a></dd>
+        </dl>
+        <p class="note">Prices and contact details on the site are placeholders for now.</p>
       </div>
     </div>
   </div>
@@ -418,8 +468,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <footer><div class="wrap"><span><strong style="font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.035em;color:var(--ink)">Branded by G<span class="dot">.</span></strong> · Built right. Owned by you.</span><span>© 2026 George Blanchard Jr.</span></div></footer>
 <script>
 {
-  const ITEMS = [{"s": "haf", "p": "Home", "k": "hafele-home", "u": "https://b0to1q.github.io/HAFELE/", "a": "Hafele home page: hero with a seasonal estimate request, quick facts, six services with job photos, the Four-Season Care band, service area, Verse of the Day and footer"}, {"s": "haf", "p": "Services", "k": "hafele-services", "u": "https://b0to1q.github.io/HAFELE/services.html", "a": "Hafele services page: Four-Season Care, then six services with job photos and estimate buttons, then common questions"}, {"s": "haf", "p": "About & contact", "k": "hafele-about", "u": "https://b0to1q.github.io/HAFELE/about.html", "a": "Hafele about and contact page"}, {"s": "dani", "p": "Home", "k": "dani-home", "u": "https://b0to1q.github.io/DANIHAMM/", "a": "Dani Hamm home page: name over a misty hero, three full-screen scenes, then the filterable portfolio", "g": "dani"}, {"s": "dani", "p": "Shop", "k": "dani-shop", "u": "https://b0to1q.github.io/DANIHAMM/shop.html", "a": "Dani Hamm shop: prints and goods, eight products", "g": "dani"}, {"s": "dani", "p": "Product", "k": "dani-product", "u": "https://b0to1q.github.io/DANIHAMM/product.html?item=mug", "a": "Dani Hamm product page for a mug: pick the photo, options and quantity", "g": "dani"}, {"s": "dani", "p": "About", "k": "dani-about", "u": "https://b0to1q.github.io/DANIHAMM/about.html", "a": "Dani Hamm about page", "g": "dani"}, {"s": "dani", "p": "Contact", "k": "dani-contact", "u": "https://b0to1q.github.io/DANIHAMM/contact.html", "a": "Dani Hamm contact page with an inquiry form", "g": "dani"}];
-  const SITES = {"haf": {"name": "Hafele Landscaping", "tag": "Client build", "live": "https://b0to1q.github.io/HAFELE/", "bg": "#1D3326", "ink": "#F6F2E6", "acc": "#CBB373", "rule": "#38533F", "soft": "#C9CFBF"}, "dani": {"name": "Dani Hamm", "tag": "Spec concept", "live": "https://b0to1q.github.io/DANIHAMM/", "bg": "#121A1D", "ink": "#E9EEF0", "acc": "#8FB1B8", "rule": "#2A3639", "soft": "#A3B1B5"}};
+  const ITEMS = [{"s": "haf", "p": "Home", "k": "hafele-home", "u": "https://b0to1q.github.io/HAFELE/", "a": "Hafele home page: hero with a seasonal estimate request, quick facts, six services with job photos, the Four-Season Care band, service area, Verse of the Day and footer"}, {"s": "haf", "p": "Services", "k": "hafele-services", "u": "https://b0to1q.github.io/HAFELE/services.html", "a": "Hafele services page: Four-Season Care, then six services with job photos and estimate buttons, then common questions"}, {"s": "haf", "p": "About & contact", "k": "hafele-about", "u": "https://b0to1q.github.io/HAFELE/about.html", "a": "Hafele about and contact page"}, {"s": "dani", "p": "Home", "k": "dani-home", "u": "https://b0to1q.github.io/DANIHAMM/", "a": "Dani Hamm home page: name over a misty hero, three full-screen scenes, then the filterable portfolio", "g": "dani"}, {"s": "dani", "p": "Shop", "k": "dani-shop", "u": "https://b0to1q.github.io/DANIHAMM/shop.html", "a": "Dani Hamm shop: prints and goods, eight products", "g": "dani"}, {"s": "dani", "p": "Product", "k": "dani-product", "u": "https://b0to1q.github.io/DANIHAMM/product.html?item=mug", "a": "Dani Hamm product page for a mug: pick the photo, options and quantity", "g": "dani"}, {"s": "dani", "p": "About", "k": "dani-about", "u": "https://b0to1q.github.io/DANIHAMM/about.html", "a": "Dani Hamm about page", "g": "dani"}, {"s": "dani", "p": "Contact", "k": "dani-contact", "u": "https://b0to1q.github.io/DANIHAMM/contact.html", "a": "Dani Hamm contact page with an inquiry form", "g": "dani"}, {"s": "rei", "p": "Home", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/", "a": "Reillo home: animated REILLO wordmark over a light-leak background, service tickers and the package builder below", "yd": 0, "ym": 0}, {"s": "rei", "p": "Package builder", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#builder", "a": "Reillo package builder: choose vehicle size, services and add-ons with live pricing and time on site", "yd": 0.1898, "ym": 0.1446}, {"s": "rei", "p": "Membership", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#club", "a": "The Reillo Club: three monthly membership plans", "yd": 0.6098, "ym": 0.5282}, {"s": "rei", "p": "Booking", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#book", "a": "Reillo booking request form with arrival windows", "yd": 0.8403, "ym": 0.776}];
+  const SITES = {"haf": {"name": "Hafele Landscaping", "tag": "Client build", "live": "https://b0to1q.github.io/HAFELE/", "bg": "#1D3326", "ink": "#F6F2E6", "acc": "#CBB373", "rule": "#38533F", "soft": "#C9CFBF"}, "dani": {"name": "Dani Hamm", "tag": "Spec concept", "live": "https://b0to1q.github.io/DANIHAMM/", "bg": "#121A1D", "ink": "#E9EEF0", "acc": "#8FB1B8", "rule": "#2A3639", "soft": "#A3B1B5"}, "rei": {"name": "Reillo Private Detail", "tag": "In progress", "live": "https://b0to1q.github.io/REILLO/", "bg": "#0A0B0D", "ink": "#F3F3F1", "acc": "#FF3D2E", "rule": "#262A31", "soft": "#A3A7AE"}};
   const $ = id => document.getElementById(id);
   const zoom = $('zoom'), frame = $('zframe'), vp = $('zvp'), img = $('zimg'), tabs = $('ztabs'), dots = $('zdots');
   const tiles = [...document.querySelectorAll('.tile')];
@@ -437,15 +487,19 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 
   const paint = it => {
     const sz = mode === 'phone' ? 'm' : 'd';
-    img.src = 'img/v3/' + sz + '-' + it.k + '.webp?v=4';
+    const src = 'img/v3/' + sz + '-' + it.k + '.webp?v=4';
     vp.style.backgroundImage = it.g ? `url(img/v3/bg-${it.g}-${sz}.webp?v=4)` : 'none';
-    vp.style.backgroundColor = it.g ? '#0B1416' : '#fff';
+    vp.style.backgroundColor = it.g ? '#0B1416' : (it.s === 'rei' ? '#0A0B0D' : '#fff');
+    const y = (mode === 'phone' ? it.ym : it.yd) || 0;
+    const go = () => { vp.scrollTop = Math.round(y * img.offsetHeight); };
+    if (img.getAttribute('src') !== src) { vp.scrollTop = 0; img.src = src; if (y) img.addEventListener('load', go, {once: true}); }
+    else go();
   };
   const setMode = m => {
     mode = m;
     zoom.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m ? 'true' : 'false'));
     frame.classList.toggle('phone', m === 'phone');
-    if (cur > -1) { paint(ITEMS[cur]); vp.scrollTop = 0; }
+    if (cur > -1) { paint(ITEMS[cur]); }
   };
 
   const show = (i, dir) => {
@@ -458,7 +512,6 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     $('zlive').href = it.u;
     img.alt = it.a;
     paint(it);
-    vp.scrollTop = 0;
     tabs.innerHTML = ITEMS.map((x, j) => x.s === it.s ? `<button type="button" role="tab" data-j="${j}" aria-selected="${j === cur}">${x.p.replace('&', '&amp;')}</button>` : '').join('');
     tabs.querySelector('[aria-selected=true]')?.scrollIntoView({block: 'nearest', inline: 'nearest'});
     dots.innerHTML = ITEMS.map((x, j) => `<i class="${j === cur ? 'on' : ''}"></i>`).join('');
