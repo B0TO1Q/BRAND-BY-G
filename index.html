@@ -64,6 +64,9 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacin
 .lede p{margin:0;font-size:18px;max-width:58ch;color:var(--soft)}
 .lede p strong{color:var(--ink);font-weight:600}
 .where{font-size:15px;color:var(--soft);justify-self:end;text-align:right}
+.stat{display:flex;align-items:center;gap:14px;text-align:left}
+.stat b{font-family:var(--disp);font-weight:900;font-stretch:125%;font-size:clamp(40px,5vw,60px);letter-spacing:-.04em;line-height:1;color:var(--ink);white-space:nowrap}
+.stat span{font-size:14px;line-height:1.4;color:var(--soft);max-width:24ch}
 @media(max-width:760px){.lede{grid-template-columns:minmax(0,1fr)}.where{justify-self:start;text-align:left}}
 
 /* stage of frames */
@@ -294,7 +297,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     <h1><span>Be found.</span><span>Be trusted.</span><span>Be chosen<span class="dot">.</span></span></h1>
     <div class="lede">
       <p>I build websites for local businesses — landscapers, photographers, tradesmen, doctors and everyone in between. <strong>Built right. Owned by you.</strong> No templates, no lock-in, and a site that works as well on a phone in a driveway as it does on a desk.</p>
-      <p class="where">George Blanchard Jr. · Plantsville, Connecticut</p>
+      <div class="where stat"><b>97+</b><span>Google PageSpeed score for the Hafele Landscaping site, on phones and computers</span></div>
     </div>
     <div class="stage" aria-hidden="true">
       <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/v3/d-hafele-home.webp?v=7" alt=""></div>
