@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Brand by G</title>
+<meta name="description" content="Websites for local businesses in Connecticut. Built right. Owned by you.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://b0to1q.github.io/BRAND-BY-G/work.html">
+<meta property="og:title" content="Brand by G">
+<meta property="og:description" content="Websites for local businesses in Connecticut. Built right. Owned by you.">
+<meta property="og:image" content="https://b0to1q.github.io/BRAND-BY-G/og.png?v=6">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Brand by G.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://b0to1q.github.io/BRAND-BY-G/og.png?v=6">
+<meta name="theme-color" content="#2A2D2B">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: plain-spoken local builder, confident, no fluff
+   IDEA: a job folder — each site filed as a case with a spec sheet, shown in its client's own colours
+   PICTURE: the real sites in browser and phone frames, overlapping on a work stage
+   COLOUR and TYPE: bone + ink frame, signal orange accent; each case band takes the client palette. Oswald + Inter
+   LAYOUT: headline, then stage; cases alternate image/spec; offer table; contact */
+:root{color-scheme:light dark;
+--bg:light-dark(#EEEAE2,#111311);--ink:light-dark(#151715,#ECE8E0);--soft:light-dark(#545852,#A7AAA3);
+--rule:light-dark(#CFC9BC,#2C2F2B);--card:light-dark(#F7F4EE,#191C19);--acc:#E0592A;
+--disp:Archivo,'Arial Black',sans-serif;--text:Inter,system-ui,sans-serif}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--text);overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(5vw,18px)}
+h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.03em;line-height:1.02;margin:0;text-wrap:balance}
+
+/* top bar */
+.top{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px;flex-wrap:wrap}
+.logo{font-family:var(--disp);font-weight:900;font-stretch:125%;font-size:21px;text-decoration:none;letter-spacing:-.035em}
+.top nav{display:flex;gap:4px;flex-wrap:wrap}
+.top nav a{text-decoration:none;padding:10px 12px;border-radius:6px;font-weight:500;font-size:15px}
+.top nav a:hover{background:var(--card)}
+.top nav a.go{background:var(--ink);color:var(--bg)}
+@media(max-width:600px){.top .wrap{flex-wrap:wrap;gap:0;min-height:0;padding-top:10px}.top nav{width:100%;flex-wrap:nowrap;justify-content:space-between;overflow-x:auto;scrollbar-width:none;margin:6px 0 0;padding-bottom:8px;gap:2px}.top nav a{flex:none;padding:8px 7px;font-size:14px}}
+.top nav a[aria-current=page]{background:var(--card);font-weight:600}
+.top nav a.go[aria-current=page]{background:var(--ink)}
+
+/* hero */
+.hero{padding:clamp(40px,7vw,96px) 0 0}
+.hero h1{font-size:clamp(34px,7vw,88px);letter-spacing:-.035em;line-height:.98}
+.hero h1>span{display:block}
+.dot{color:var(--acc)}
+.lede{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 48px;margin-top:28px;align-items:end}
+.lede p{margin:0;font-size:18px;max-width:58ch;color:var(--soft)}
+.lede p strong{color:var(--ink);font-weight:600}
+.where{font-size:15px;color:var(--soft);justify-self:end;text-align:right}
+@media(max-width:760px){.lede{grid-template-columns:minmax(0,1fr)}.where{justify-self:start;text-align:left}}
+
+/* stage of frames */
+.stage{position:relative;margin-top:clamp(36px,5vw,64px);aspect-ratio:16/8.4;max-height:640px;width:100%}
+.stage::before{content:"";position:absolute;inset:auto -5vw 0 -5vw;height:62%;background:var(--ink);z-index:0}
+.br{position:absolute;background:#0E100E;border-radius:10px;overflow:hidden;box-shadow:0 30px 60px -20px rgba(0,0,0,.45),0 0 0 1px rgba(0,0,0,.12)}
+.br .bar{height:28px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#24272A}
+.br .bar i{width:9px;height:9px;border-radius:50%;background:#555A5E}
+.br .bar span{margin-left:10px;font-size:11px;color:#A9AEB2;background:#33373B;border-radius:4px;padding:2px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.br img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.ph{position:absolute;border-radius:18px;padding:3px;background:#0E100E;box-shadow:0 30px 50px -18px rgba(0,0,0,.55)}
+.ph img{border-radius:15px;width:100%;aspect-ratio:390/800;object-fit:cover;object-position:top}
+.s1{left:0;top:0;width:62%;z-index:2}
+.s2{right:0;top:14%;width:50%;z-index:1}
+.s3{left:56%;bottom:-4%;width:15%;z-index:3}
+@media(max-width:600px){.stage{aspect-ratio:auto;height:auto;display:grid;gap:14px;padding-bottom:28px}
+.stage .br,.stage .ph{position:relative;inset:auto;width:100%}.stage .ph{display:none}.s2{width:86%!important;margin-left:auto;margin-top:-18%}}
+
+/* work grid */
+.work{padding:clamp(56px,8vw,104px) 0 clamp(40px,6vw,72px)}
+.work .sub{color:var(--soft);font-size:17px;margin:12px 0 0;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);margin-top:clamp(28px,4vw,44px)}
+@media(max-width:960px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tile{all:unset;box-sizing:border-box;cursor:pointer;aspect-ratio:1;display:flex;flex-direction:column;border-radius:14px;overflow:hidden;background:var(--t-bg);color:var(--t-ink);box-shadow:0 1px 0 rgba(0,0,0,.04),0 14px 30px -18px rgba(0,0,0,.45);transition:transform .25s ease,box-shadow .25s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:0 1px 0 rgba(0,0,0,.04),0 22px 40px -18px rgba(0,0,0,.55)}
+.tile:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.tile .shot{flex:1;min-height:0;overflow:hidden;margin:8px 8px 0;border-radius:8px 8px 0 0;background:#fff}
+.tile .shot img{width:100%;height:auto;transition:transform .9s ease}
+.tile:hover .shot img,.tile:focus-visible .shot img{transform:translateY(calc(var(--s,0px) * -1));transition-duration:var(--d,6s);transition-timing-function:linear}
+.tile .lbl{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:10px 12px 12px;font-size:14px;line-height:1.25}
+.tile .cl{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile .pg{color:var(--t-acc);white-space:nowrap}
+@media(max-width:640px){.tile .lbl{flex-direction:column;gap:2px;padding:8px 10px 10px;font-size:13px}}
+
+/* cases */
+.case{padding:clamp(56px,8vw,104px) 0;color:var(--c-ink);background:var(--c-bg)}
+.case.haf{--c-bg:#1D3326;--c-ink:#F6F2E6;--c-acc:#CBB373;--c-rule:#38533F;--c-soft:#C9CFBF;--c-on:#1D3326}
+.case.dani{--c-bg:#121A1D;--c-ink:#E9EEF0;--c-acc:#8FB1B8;--c-rule:#2A3639;--c-soft:#A3B1B5;--c-on:#121A1D}
+.case.rei{--c-bg:#0A0B0D;--c-ink:#F3F3F1;--c-acc:#FF3D2E;--c-rule:#262A31;--c-soft:#A3A7AE;--c-on:#0A0B0D}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap;border-bottom:1px solid var(--c-rule);padding-bottom:22px}
+.kind{font-size:15px;color:var(--c-acc);font-weight:600;margin:0 0 6px}
+.case h2{font-size:clamp(30px,4.6vw,52px)}
+.acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.tag{font-size:14px;border:1px solid var(--c-acc);color:var(--c-acc);padding:4px 12px;border-radius:99px;white-space:nowrap}
+.live,.open{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap;cursor:pointer;font-family:var(--text)}
+.live{background:var(--c-acc);color:var(--c-on);border:0}
+.open{background:transparent;color:var(--c-ink);border:1px solid var(--c-rule)}
+.open:hover{border-color:var(--c-acc)}
+.live:hover{filter:brightness(1.08)}
+.live svg,.open svg{width:14px;height:14px;flex:none}
+.live:focus-visible,.open:focus-visible{outline:3px solid var(--c-acc);outline-offset:3px}
+.lead{font-family:var(--disp);font-weight:700;font-stretch:112%;letter-spacing:-.02em;font-size:clamp(22px,2.7vw,34px);line-height:1.15;max-width:none;margin:clamp(24px,3vw,36px) 0 0;text-wrap:pretty}
+.lead .phr{display:inline-block}
+@media(max-width:600px){.lead{text-wrap:balance}.lead:not(.keep) .phr{display:inline}}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);margin-top:clamp(28px,4vw,44px);align-items:start}
+@media(max-width:860px){.cgrid{grid-template-columns:minmax(0,1fr)}}
+.copy p{margin:0 0 16px;font-size:17px;max-width:62ch}
+.built{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.built li{padding-left:22px;position:relative;font-size:16px}
+.built li strong{font-weight:600}
+.built li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--c-acc)}
+dl.spec{display:grid;grid-template-columns:auto minmax(0,1fr);margin:0;border-top:1px solid var(--c-rule);font-size:15px}
+dl.spec dt,dl.spec dd{margin:0;padding:10px 0;border-bottom:1px solid var(--c-rule)}
+dl.spec dt{color:var(--c-soft);padding-right:20px;white-space:nowrap}
+dl.spec a{color:var(--c-acc)}
+.swatch{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.note{font-size:13px;color:var(--c-soft);margin-top:14px}
+
+/* zoom viewer */
+.zoom{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--z-bg);color:var(--z-ink);padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.zoom[hidden]{display:none}
+.zin{display:flex;flex-direction:column;flex:1;min-height:0}
+.zbar{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;padding:12px max(3vw,14px);border-bottom:1px solid var(--z-rule)}
+.zb{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;min-width:44px;padding:0 14px;border-radius:8px;border:1px solid var(--z-rule);font:600 15px/1 var(--text);color:var(--z-ink);white-space:nowrap}
+.zb:hover{border-color:var(--z-acc)}
+.zb:focus-visible,.zt button:focus-visible,.zvp:focus-visible{outline:3px solid var(--z-acc);outline-offset:2px}
+.zb svg{width:16px;height:16px;flex:none}
+.ztitle{flex:1;min-width:160px;display:flex;flex-direction:column;gap:2px}
+.ztitle b{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.03em;font-size:clamp(18px,2vw,22px);line-height:1.1}
+.ztitle span{font-size:14px;color:var(--z-soft)}
+.seg{display:inline-flex;border:1px solid var(--z-rule);border-radius:8px;padding:3px;gap:3px}
+.seg button{all:unset;box-sizing:border-box;cursor:pointer;min-height:38px;padding:0 12px;border-radius:6px;font:500 14px/38px var(--text);color:var(--z-ink)}
+.seg button[aria-pressed=true]{background:var(--z-ink);color:var(--z-bg)}
+.seg button:focus-visible{outline:3px solid var(--z-acc);outline-offset:1px}
+.zlive{background:var(--z-acc);color:var(--z-bg);border-color:var(--z-acc);text-decoration:none}
+.zt{display:flex;gap:6px;padding:10px max(3vw,14px) 0;overflow-x:auto;scrollbar-width:none}
+.zt button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;min-height:40px;padding:0 14px;border-radius:99px;border:1px solid var(--z-rule);font:500 14px/38px var(--text);color:var(--z-ink)}
+.zt button[aria-selected=true]{background:var(--z-ink);color:var(--z-bg);border-color:var(--z-ink)}
+.zstage{flex:1;min-height:0;display:flex;align-items:stretch;justify-content:center;gap:14px;padding:14px max(3vw,14px) 16px;touch-action:pan-y}
+.zframe{display:flex;flex-direction:column;width:min(1200px,100%);min-height:0;border-radius:12px;overflow:hidden;background:#0E100E;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
+.zframe .bar{height:32px;flex:none;display:flex;align-items:center;gap:6px;padding:0 14px;background:#24272A}
+.zframe .bar i{width:10px;height:10px;border-radius:50%;background:#555A5E;flex:none}
+.zframe .bar span{margin-left:10px;font-size:12px;color:#B5BABE;background:#33373B;border-radius:5px;padding:4px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.zvp{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;background:#fff;-webkit-overflow-scrolling:touch}
+.zvp img{display:block;width:100%;height:auto}
+.zvp{background-color:#fff;background-size:cover;background-position:center top;background-repeat:no-repeat}
+.shot.bgdani{background:#0B1416 url(img/v3/bg-dani-d.webp?v=6) center top/cover no-repeat}
+.zframe.phone{width:min(392px,100%);border-radius:34px;padding:4px}
+.zframe.phone .bar{display:none}
+.zframe.phone .zvp{border-radius:30px}
+.znav{align-self:center;flex:none}
+@media(max-width:700px){.znav{display:none}.zbar{gap:8px}.ztitle{flex:1 1 calc(100% - 64px)}.zb.zback span{display:none}}
+.zfoot{display:flex;justify-content:center;gap:6px;padding:0 0 12px}
+.zfoot i{width:7px;height:7px;border-radius:50%;background:var(--z-rule)}
+.zfoot i.on{background:var(--z-acc)}
+.slide-l{animation:sl .28s ease}.slide-r{animation:sr .28s ease}
+@keyframes sl{from{transform:translateX(40px);opacity:.3}}@keyframes sr{from{transform:translateX(-40px);opacity:.3}}
+@media(prefers-reduced-motion:reduce){.tile:hover .shot img{transform:none}.slide-l,.slide-r{animation:none}}
+/* process */
+.band{padding:clamp(56px,8vw,112px) 0}
+.sec h2{font-size:clamp(30px,4.2vw,48px)}
+.sec .sub{color:var(--soft);font-size:17px;max-width:60ch;margin:14px 0 0}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:40px;border-top:2px solid var(--ink)}
+.steps div{padding:20px 20px 4px 0}
+.steps h3{font-size:22px;margin-bottom:6px}
+.steps p{margin:0;color:var(--soft);font-size:15px}
+@media(max-width:860px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* offer */
+.offer{background:var(--card);border-block:1px solid var(--rule)}
+.plans{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:20px;margin-top:40px}
+@media(max-width:820px){.plans{grid-template-columns:minmax(0,1fr)}}
+.plan{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:clamp(22px,3vw,36px)}
+.plan.main{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.plan h3{font-size:24px}
+.plan .price{font-family:var(--disp);font-size:clamp(40px,5.6vw,60px);font-weight:900;font-stretch:125%;letter-spacing:-.03em;line-height:1;margin:16px 0 4px;white-space:nowrap}
+.plan .price small{font-size:20px;font-weight:500;opacity:.7}
+.intro{display:inline-block;background:var(--acc);color:#fff;font-weight:600;font-size:14px;padding:5px 12px;border-radius:6px;margin:6px 0 14px}
+.plan ul{margin:14px 0 0;padding-left:18px;display:grid;gap:8px;font-size:15px}
+.plan.main ul{opacity:.92}
+.plan p{margin:0;font-size:15px}
+.fine{font-size:14px;color:var(--soft);margin-top:18px;max-width:70ch}
+
+/* add-ons */
+.addons{margin-top:clamp(40px,5vw,64px)}
+.addons h3{font-size:clamp(24px,2.6vw,30px)}
+.addons .sub{margin-top:8px}
+.agrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:24px}
+@media(max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:480px){.agrid{grid-template-columns:minmax(0,1fr)}}
+.add{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.add h4{margin:0;font-family:var(--disp);font-weight:800;font-stretch:112%;letter-spacing:-.02em;font-size:19px;line-height:1.15}
+.add p{margin:0;font-size:15px;color:var(--soft)}
+.add .eg{font-size:13px;color:var(--soft);margin-top:auto;padding-top:6px}
+.add .eg strong{color:var(--ink);font-weight:600}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:center}
+@media(max-width:760px){.about .wrap{grid-template-columns:minmax(0,1fr)}}
+.portrait{margin:0;border-radius:14px;overflow:hidden;background:#0b0b0b;aspect-ratio:4/5;max-width:440px;width:100%}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:760px){.portrait{max-width:340px}}
+.about h2{font-size:clamp(30px,4.2vw,48px)}
+.about p{font-size:17px;max-width:58ch;margin:16px 0 0}
+.facts{display:grid;grid-template-columns:auto minmax(0,1fr);margin:24px 0 0;border-top:1px solid var(--rule);font-size:15px;max-width:520px}
+.facts dt,.facts dd{margin:0;padding:10px 0;border-bottom:1px solid var(--rule)}
+.facts dt{color:var(--soft);padding-right:20px;white-space:nowrap}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px 56px;align-items:end}
+@media(max-width:820px){.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+.contact h2{font-size:clamp(34px,5.6vw,72px)}
+.card{border:2px solid var(--ink);border-radius:12px;padding:24px}
+.card p{margin:0 0 10px}
+.card .line{display:flex;justify-content:space-between;gap:12px;border-top:1px solid var(--rule);padding:12px 0;flex-wrap:wrap}
+.card .line span:first-child{color:var(--soft)}
+.card .line a{color:inherit;font-weight:600;text-decoration:none;white-space:nowrap}
+.card .line a:hover{text-decoration:underline}
+.cbtns{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.cbtn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--ink);color:var(--ink);flex:1 1 auto}
+.cbtn.pri{background:var(--ink);color:var(--bg)}
+.cbtn:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.card .faqlink{font-size:14px;color:var(--soft);margin:14px 0 0}
+.card .faqlink a{color:var(--ink)}
+footer{border-top:1px solid var(--rule);padding:24px 0;font-size:14px;color:var(--soft)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
+/* home teasers */
+.hsec{padding:clamp(56px,8vw,104px) 0}
+.hsec h2{font-size:clamp(30px,4.2vw,48px)}
+.hsec .sub{color:var(--soft);font-size:17px;margin:12px 0 0;max-width:60ch}
+.hhead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.more{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:8px;border:1px solid var(--ink);font-weight:600;font-size:15px;text-decoration:none;white-space:nowrap}
+.more.pri{background:var(--ink);color:var(--bg)}
+.more:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.pgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.6vw,20px);margin-top:clamp(28px,4vw,40px)}
+@media(max-width:860px){.pgrid{grid-template-columns:minmax(0,1fr)}}
+.pgrid .tile{aspect-ratio:4/3.4;text-decoration:none}
+.pgrid .lbl{font-size:15px}
+.oband{background:var(--ink);color:var(--bg)}
+.oband .wrap{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px 56px;align-items:center}
+@media(max-width:820px){.oband .wrap{grid-template-columns:minmax(0,1fr)}}
+.oband h2{font-size:clamp(30px,4.2vw,48px)}
+.oband p{margin:14px 0 0;opacity:.85;font-size:17px;max-width:56ch}
+.ofacts{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid rgba(255,255,255,.18)}
+.ofacts li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:16px}
+.ofacts li b{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.03em;font-size:22px;white-space:nowrap}
+.oband .acts2{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.oband .more{border-color:var(--bg);color:var(--bg)}
+.oband .more.pri{background:var(--bg);color:var(--ink)}
+.hab .wrap{display:grid;grid-template-columns:200px minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center}
+@media(max-width:600px){.hab .wrap{grid-template-columns:120px minmax(0,1fr)}}
+.hab .portrait{max-width:none;border-radius:12px}
+.hab p{font-size:17px;margin:12px 0 18px;max-width:56ch}
+.pagehead{padding:clamp(40px,6vw,80px) 0 0}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="index.html">Brand by G<span class="dot">.</span></a>
+    <nav aria-label="Main">
+      <a href="work.html" aria-current="page">Work</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a class="go" href="#contact">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="work" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <h1 id="work-h" style="font-size:clamp(36px,5.4vw,64px)">Work<span class="dot">.</span></h1>
+    <p class="sub">Three sites, twelve views. Tap one to open it full size and scroll through it.</p>
+    <div class="grid">
+      <button class="tile" type="button" data-i="0" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Home page">
+        <span class="shot"><img src="img/v3/t-hafele-home.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Home</span></span>
+      </button>
+      <button class="tile" type="button" data-i="1" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Services page">
+        <span class="shot"><img src="img/v3/t-hafele-services.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Services</span></span>
+      </button>
+      <button class="tile" type="button" data-i="2" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, About &amp; contact page">
+        <span class="shot"><img src="img/v3/t-hafele-about.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">About &amp; contact</span></span>
+      </button>
+      <button class="tile" type="button" data-i="3" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Home page">
+        <span class="shot bgdani"><img src="img/v3/t-dani-home.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Home</span></span>
+      </button>
+      <button class="tile" type="button" data-i="4" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Shop page">
+        <span class="shot bgdani"><img src="img/v3/t-dani-shop.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Shop</span></span>
+      </button>
+      <button class="tile" type="button" data-i="5" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Product page">
+        <span class="shot bgdani"><img src="img/v3/t-dani-product.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Product</span></span>
+      </button>
+      <button class="tile" type="button" data-i="6" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, About page">
+        <span class="shot bgdani"><img src="img/v3/t-dani-about.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">About</span></span>
+      </button>
+      <button class="tile" type="button" data-i="7" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Contact page">
+        <span class="shot bgdani"><img src="img/v3/t-dani-contact.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Contact</span></span>
+      </button>
+      <button class="tile" type="button" data-i="8" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Home">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-top.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Home</span></span>
+      </button>
+      <button class="tile" type="button" data-i="9" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Package builder">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-builder.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Package builder</span></span>
+      </button>
+      <button class="tile" type="button" data-i="10" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Membership">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-club.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Membership</span></span>
+      </button>
+      <button class="tile" type="button" data-i="11" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Booking">
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-book.webp?v=6" alt="" loading="lazy"></span>
+        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Booking</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="case haf" id="hafele" aria-labelledby="haf-h">
+  <div class="wrap">
+    <div class="hd">
+      <div><p class="kind">Client build · Landscaping &amp; snow removal</p><h2 id="haf-h">Hafele Landscaping</h2></div>
+      <div class="acts"><span class="tag">Draft with the owner</span><button class="open" type="button" data-open="0">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+    </div>
+    <p class="lead"><span class="phr">A site that knows what season it is&nbsp;—</span> <span class="phr">and an estimate in two taps,</span> <span class="phr">from the driveway.</span></p>
+    <div class="cgrid">
+      <div class="copy">
+        <p>Hafele is a Burlington, CT crew covering lawn and turf care, grounds maintenance, lawn renovation, gutters and snow removal across fifteen towns in Hartford and Litchfield counties. The brief: classic, professional, built to last — and turn visits into estimate requests.</p>
+        <ul class="built">
+          <li><strong>A site that changes with the seasons.</strong> It reads today's date and switches to spring, summer, fall or winter, with a season tone on the hero photo and quote options for that time of year, like Fall Cleanup or Reserve Snow Removal. Visitors can flip between seasons with tabs.</li>
+          <li><strong>Four-Season Care.</strong> An annual agreement for year-round upkeep, with its own band on Home and Services, a request-a-walkthrough button, and an option in every season.</li>
+          <li><strong>Two-step estimate request.</strong> Pick a service and a time window, then name, cell and address. Send opens a text to the owner with everything filled in, with an email fallback.</li>
+          <li><strong>Call, Text and Get an Estimate</strong> pinned to the bottom of the screen on phones.</li>
+          <li><strong>Trust up front:</strong> a Licensed &amp; Insured · BBB Accredited · 5.0 on Google line under the headline, reviews in customers' own words on the home page, and an About page written with owners Nate &amp; Megan.</li>
+          <li><strong>Three pages:</strong> Home, Services with common questions, and About &amp; Contact, written for homeowners in plain language — on its own domain, set up so Google can read the business details and every page shares cleanly.</li>
+          <li><strong>Small touches:</strong> real job photos and a walk-around video, sections that fade up as you scroll, smooth scrolling with a mouse or trackpad, and a Verse of the Day above the footer.</li>
+        </ul>
+      </div>
+      <dl class="spec">
+        <dt>Location</dt><dd>Burlington, CT</dd>
+        <dt>Brand</dt><dd><span class="swatch" style="background:#1D3326"></span>Forest green · <span class="swatch" style="background:#CBB373"></span>Gold, on their own logo</dd>
+        <dt>Pages</dt><dd>Home · Services · About &amp; Contact</dd>
+        <dt>Seasons</dt><dd>Spring · Summer · Fall · Winter, chosen by date</dd>
+        <dt>Built with</dt><dd>Hand-written HTML, CSS and JavaScript — fast, no page builder</dd>
+        <dt>Next</dt><dd>Requests flow straight into Jobber</dd>
+        <dt>Live</dt><dd><a href="https://hafelelandscaping.com/" target="_blank" rel="noopener">hafelelandscaping.com</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section class="case dani" id="dani-hamm" aria-labelledby="dani-h">
+  <div class="wrap">
+    <div class="hd">
+      <div><p class="kind">Spec concept · Wildlife photography</p><h2 id="dani-h">Dani Hamm</h2></div>
+      <div class="acts"><span class="tag">Spec concept</span><button class="open" type="button" data-open="3">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+    </div>
+    <p class="lead keep"><span class="phr">A gallery that feels like being</span> <span class="phr">out there at first light.</span></p>
+    <div class="cgrid">
+      <div class="copy">
+        <p>A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Dark, cinematic, quiet type, and the photos given the whole screen. Colour blocks stand in for her photos until she supplies her own.</p>
+        <ul class="built">
+          <li><strong>Three full-screen scenes</strong> — first light, fog, the moment — that lead into the work.</li>
+          <li><strong>Portfolio</strong> filtered by birds, mammals, landscapes and concerts.</li>
+          <li><strong>Shop with eight products:</strong> prints, canvas, framed, metal, mugs, postcards, calendars and tees.</li>
+          <li><strong>Product pages</strong> where the buyer picks the photo, size, colour and quantity, with a working cart.</li>
+          <li><strong>About and contact</strong> pages with an inquiry form.</li>
+          <li><strong>Small touches:</strong> gallery lighting on every image, drifting fog and light beams behind each page, and smooth, slightly slower scrolling with a mouse or trackpad.</li>
+        </ul>
+      </div>
+      <div>
+        <dl class="spec">
+          <dt>Pages</dt><dd>Home · Shop · Product · About · Contact</dd>
+          <dt>Type</dt><dd>Anton · Italiana · DM Sans</dd>
+          <dt>Built with</dt><dd>HTML, CSS and JavaScript; adapts to any screen; motion turns off for visitors who prefer less</dd>
+          <dt>Next</dt><dd>Real photos, checkout and a print-on-demand partner</dd>
+          <dt>Live</dt><dd><a href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">b0to1q.github.io/DANIHAMM</a></dd>
+        </dl>
+        <p class="note">Not affiliated with or approved by Dani Hamm.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case rei" id="reillo" aria-labelledby="rei-h">
+  <div class="wrap">
+    <div class="hd">
+      <div><p class="kind">Mobile detailing · Luxury vehicles</p><h2 id="rei-h">Reillo Private Detail</h2></div>
+      <div class="acts"><span class="tag">In progress</span><button class="open" type="button" data-open="8">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+    </div>
+    <p class="lead"><span class="phr">Showroom gloss, delivered&nbsp;—</span> <span class="phr">with a builder that prices the detail</span> <span class="phr">before the first phone call.</span></p>
+    <div class="cgrid">
+      <div class="copy">
+        <p>A luxury mobile detailing service: paint correction, ceramic coatings and concierge interior care at the client's home or office. The brief: super sleek, interactive and adaptive.</p>
+        <ul class="built">
+          <li><strong>Package builder</strong> with live pricing by vehicle size, add-ons and estimated time on site.</li>
+          <li><strong>A cinematic first screen:</strong> an animated REILLO wordmark, a film light-leak background and slow-scrolling service tickers.</li>
+          <li><strong>Scroll-driven effects:</strong> a reading progress bar, sections that rise in, a "Haze → Mirror" strike-through, and a sideways "how a visit works" section.</li>
+          <li><strong>The Reillo Club</strong> membership plans, common questions, and a booking request with arrival windows.</li>
+          <li><strong>Motion turns off</strong> for visitors who prefer less, and older browsers get a clean static layout.</li>
+        </ul>
+      </div>
+      <div>
+        <dl class="spec">
+          <dt>Pages</dt><dd>One page: builder, results, process, membership, questions, booking</dd>
+          <dt>Brand</dt><dd><span class="swatch" style="background:#0A0B0D"></span>Black · <span class="swatch" style="background:#FF3D2E"></span>Signal red</dd>
+          <dt>Type</dt><dd>Jost · Inter</dd>
+          <dt>Built with</dt><dd>HTML, CSS and JavaScript in one file</dd>
+          <dt>Next</dt><dd>Real prices and contact details; connect the booking form</dd>
+          <dt>Live</dt><dd><a href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">b0to1q.github.io/REILLO</a></dd>
+        </dl>
+        <p class="note">Prices and contact details on the site are placeholders for now.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="zoom" id="zoom" role="dialog" aria-modal="true" aria-labelledby="zname" hidden>
+  <div class="zin">
+    <div class="zbar">
+      <button class="zb zback" type="button" id="zclose"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg><span>All work</span></button>
+      <div class="ztitle"><b id="zname">Site</b><span id="zmeta">Page</span></div>
+      <div class="seg" role="group" aria-label="Preview size"><button type="button" data-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-mode="phone" aria-pressed="false">Phone</button></div>
+      <a class="zb zlive" id="zlive" href="#" target="_blank" rel="noopener">Live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a>
+    </div>
+    <div class="zt" role="tablist" aria-label="Pages" id="ztabs"></div>
+    <div class="zstage" id="zstage">
+      <button class="zb znav" type="button" id="zprev" aria-label="Previous page"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+      <div class="zframe" id="zframe">
+        <div class="bar"><i></i><i></i><i></i><span id="zurl">url</span></div>
+        <div class="zvp" id="zvp" tabindex="0" aria-label="Page preview, scrollable"><img id="zimg" src="" alt=""></div>
+      </div>
+      <button class="zb znav" type="button" id="znext" aria-label="Next page"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+    </div>
+    <div class="zfoot" id="zdots" aria-hidden="true"></div>
+  </div>
+</div>
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2>Your reputation, online<span class="dot">.</span></h2>
+    <div class="card">
+      <p><strong>Start a project</strong></p>
+      <p>Tell me what your business does and where you work. I'll come back with a plan and a price.</p>
+      <div class="line"><span>Based in</span><span>Plantsville, CT</span></div>
+      <div class="line"><span>Phone &amp; text</span><a href="tel:+12035654063">(203) 565-4063</a></div>
+      <div class="line"><span>Email</span><a href="mailto:George.Blanchard91@gmail.com">George.Blanchard91@gmail.com</a></div>
+      <div class="cbtns">
+        <a class="cbtn pri" href="sms:+12035654063?&amp;body=Hi%20G%2C%20I%27m%20interested%20in%20a%20website%20for%20my%20business.">Text me</a>
+        <a class="cbtn" href="tel:+12035654063">Call</a>
+        <a class="cbtn" href="mailto:George.Blanchard91@gmail.com?subject=Website%20for%20my%20business">Email</a>
+      </div>
+      <p class="faqlink">Have questions first? <a href="faq.html">Read the FAQ</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span><strong style="font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.035em;color:var(--ink)">Brand by G<span class="dot">.</span></strong> · Built right. Owned by you.</span><span>© 2026 George Blanchard Jr.</span></div></footer>
+<script>
+{
+  const ITEMS = [{"s": "haf", "p": "Home", "k": "hafele-home", "u": "https://hafelelandscaping.com/", "a": "Hafele home page: hero with a seasonal estimate request, quick facts, six services with job photos, customer reviews, the Four-Season Care band, service area, Verse of the Day and footer"}, {"s": "haf", "p": "Services", "k": "hafele-services", "u": "https://hafelelandscaping.com/services.html", "a": "Hafele services page: Four-Season Care, then six services with job photos and estimate buttons, then common questions"}, {"s": "haf", "p": "About & contact", "k": "hafele-about", "u": "https://hafelelandscaping.com/about.html", "a": "Hafele about and contact page"}, {"s": "dani", "p": "Home", "k": "dani-home", "u": "https://b0to1q.github.io/DANIHAMM/", "a": "Dani Hamm home page: name over a misty hero, three full-screen scenes, then the filterable portfolio", "g": "dani"}, {"s": "dani", "p": "Shop", "k": "dani-shop", "u": "https://b0to1q.github.io/DANIHAMM/shop.html", "a": "Dani Hamm shop: prints and goods, eight products", "g": "dani"}, {"s": "dani", "p": "Product", "k": "dani-product", "u": "https://b0to1q.github.io/DANIHAMM/product.html?item=mug", "a": "Dani Hamm product page for a mug: pick the photo, options and quantity", "g": "dani"}, {"s": "dani", "p": "About", "k": "dani-about", "u": "https://b0to1q.github.io/DANIHAMM/about.html", "a": "Dani Hamm about page", "g": "dani"}, {"s": "dani", "p": "Contact", "k": "dani-contact", "u": "https://b0to1q.github.io/DANIHAMM/contact.html", "a": "Dani Hamm contact page with an inquiry form", "g": "dani"}, {"s": "rei", "p": "Home", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/", "a": "Reillo home: animated REILLO wordmark over a light-leak background, service tickers and the package builder below", "yd": 0, "ym": 0}, {"s": "rei", "p": "Package builder", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#builder", "a": "Reillo package builder: choose vehicle size, services and add-ons with live pricing and time on site", "yd": 0.1898, "ym": 0.1446}, {"s": "rei", "p": "Membership", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#club", "a": "The Reillo Club: three monthly membership plans", "yd": 0.6098, "ym": 0.5282}, {"s": "rei", "p": "Booking", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#book", "a": "Reillo booking request form with arrival windows", "yd": 0.8403, "ym": 0.776}];
+  const SITES = {"haf": {"name": "Hafele Landscaping", "tag": "Client build", "live": "https://hafelelandscaping.com/", "bg": "#1D3326", "ink": "#F6F2E6", "acc": "#CBB373", "rule": "#38533F", "soft": "#C9CFBF"}, "dani": {"name": "Dani Hamm", "tag": "Spec concept", "live": "https://b0to1q.github.io/DANIHAMM/", "bg": "#121A1D", "ink": "#E9EEF0", "acc": "#8FB1B8", "rule": "#2A3639", "soft": "#A3B1B5"}, "rei": {"name": "Reillo Private Detail", "tag": "In progress", "live": "https://b0to1q.github.io/REILLO/", "bg": "#0A0B0D", "ink": "#F3F3F1", "acc": "#FF3D2E", "rule": "#262A31", "soft": "#A3A7AE"}};
+  const $ = id => document.getElementById(id);
+  const zoom = $('zoom'), frame = $('zframe'), vp = $('zvp'), img = $('zimg'), tabs = $('ztabs'), dots = $('zdots');
+  const tiles = [...document.querySelectorAll('.tile')];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  let cur = -1, mode = matchMedia('(max-width: 700px)').matches ? 'phone' : 'desktop', pushed = false, opener = null;
+
+  // hover-scroll distance for each tile
+  const measure = t => {
+    const im = t.querySelector('img'), box = t.querySelector('.shot');
+    const s = Math.max(0, im.offsetHeight - box.clientHeight);
+    t.style.setProperty('--s', s + 'px'); t.style.setProperty('--d', Math.min(9, Math.max(1.5, s / 260)) + 's');
+  };
+  tiles.forEach(t => { const im = t.querySelector('img'); if (im.complete) measure(t); else im.addEventListener('load', () => measure(t)); });
+  new ResizeObserver(() => tiles.forEach(measure)).observe(document.querySelector('.grid'));
+
+  const paint = it => {
+    const sz = mode === 'phone' ? 'm' : 'd';
+    const src = 'img/v3/' + sz + '-' + it.k + '.webp?v=6';
+    vp.style.backgroundImage = it.g ? `url(img/v3/bg-${it.g}-${sz}.webp?v=6)` : 'none';
+    vp.style.backgroundColor = it.g ? '#0B1416' : (it.s === 'rei' ? '#0A0B0D' : '#fff');
+    const y = (mode === 'phone' ? it.ym : it.yd) || 0;
+    const go = () => { vp.scrollTop = Math.round(y * img.offsetHeight); };
+    if (img.getAttribute('src') !== src) { vp.scrollTop = 0; img.src = src; if (y) img.addEventListener('load', go, {once: true}); }
+    else go();
+  };
+  const setMode = m => {
+    mode = m;
+    zoom.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m ? 'true' : 'false'));
+    frame.classList.toggle('phone', m === 'phone');
+    if (cur > -1) { paint(ITEMS[cur]); }
+  };
+
+  const show = (i, dir) => {
+    cur = (i + ITEMS.length) % ITEMS.length;
+    const it = ITEMS[cur], st = SITES[it.s];
+    for (const [k, v] of Object.entries({bg: st.bg, ink: st.ink, acc: st.acc, rule: st.rule, soft: st.soft})) zoom.style.setProperty('--z-' + k, v);
+    $('zname').textContent = st.name;
+    $('zmeta').textContent = st.tag + ' · ' + it.p + ' · ' + (cur + 1) + ' of ' + ITEMS.length;
+    $('zurl').textContent = it.u.replace('https://', '');
+    $('zlive').href = it.u;
+    img.alt = it.a;
+    paint(it);
+    tabs.innerHTML = ITEMS.map((x, j) => x.s === it.s ? `<button type="button" role="tab" data-j="${j}" aria-selected="${j === cur}">${x.p.replace('&', '&amp;')}</button>` : '').join('');
+    tabs.querySelector('[aria-selected=true]')?.scrollIntoView({block: 'nearest', inline: 'nearest'});
+    dots.innerHTML = ITEMS.map((x, j) => `<i class="${j === cur ? 'on' : ''}"></i>`).join('');
+    if (dir) { frame.classList.remove('slide-l', 'slide-r'); void frame.offsetWidth; frame.classList.add(dir > 0 ? 'slide-l' : 'slide-r'); }
+    [cur - 1, cur + 1].forEach(j => { const x = ITEMS[(j + ITEMS.length) % ITEMS.length]; new Image().src = 'img/v3/' + (mode === 'phone' ? 'm-' : 'd-') + x.k + '.webp?v=6'; });
+  };
+
+  const rectClip = r => `inset(${r.top}px ${innerWidth - r.right}px ${innerHeight - r.bottom}px ${r.left}px round 14px)`;
+  const visible = r => r.bottom > 0 && r.top < innerHeight && r.width > 0;
+
+  const open = (i, from) => {
+    opener = from || tiles[i];
+    show(i);
+    setMode(mode);
+    zoom.hidden = false;
+    document.documentElement.style.overflow = 'hidden';
+    const r = (tiles[i] && visible(tiles[i].getBoundingClientRect()) && from && from.classList.contains('tile')) ? tiles[i].getBoundingClientRect() : null;
+    if (!reduce.matches && r) {
+      zoom.animate([{clipPath: rectClip(r)}, {clipPath: 'inset(0 0 0 0 round 0px)'}], {duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)'});
+      zoom.querySelector('.zin').animate([{opacity: 0, transform: 'scale(.985)'}, {opacity: 1, transform: 'none'}], {duration: 360, delay: 120, easing: 'ease-out', fill: 'backwards'});
+    } else {
+      zoom.animate([{opacity: 0}, {opacity: 1}], {duration: reduce.matches ? 150 : 220});
+    }
+    try { history.pushState({bbgZoom: 1}, '', '#preview'); pushed = true; } catch (e) { pushed = false; }
+    $('zclose').focus();
+  };
+
+  const close = () => {
+    if (zoom.hidden) return;
+    const t = tiles[cur], r = t && t.getBoundingClientRect();
+    const done = () => { zoom.hidden = true; document.documentElement.style.overflow = ''; (t || opener)?.focus({preventScroll: true}); };
+    if (!reduce.matches && r && visible(r)) {
+      const a = zoom.animate([{clipPath: 'inset(0 0 0 0 round 0px)'}, {clipPath: rectClip(r)}], {duration: 340, easing: 'cubic-bezier(.4,0,.2,1)'});
+      zoom.querySelector('.zin').animate([{opacity: 1}, {opacity: 0}], {duration: 200, fill: 'forwards'});
+      a.onfinish = () => { done(); zoom.querySelector('.zin').getAnimations().forEach(x => x.cancel()); };
+    } else {
+      const a = zoom.animate([{opacity: 1}, {opacity: 0}], {duration: 180}); a.onfinish = done;
+    }
+  };
+  const requestClose = () => { if (pushed) { pushed = false; history.back(); } else close(); };
+  addEventListener('popstate', () => { pushed = false; close(); });
+
+  tiles.forEach(t => t.addEventListener('click', () => open(+t.dataset.i, t)));
+  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => open(+b.dataset.open, b)));
+  $('zclose').addEventListener('click', requestClose);
+  $('zprev').addEventListener('click', () => show(cur - 1, -1));
+  $('znext').addEventListener('click', () => show(cur + 1, 1));
+  zoom.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { const j = +b.dataset.j; show(j, j > cur ? 1 : -1); } });
+
+  zoom.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { e.preventDefault(); requestClose(); }
+    else if (e.key === 'ArrowRight' && !e.target.closest('.seg')) { e.preventDefault(); show(cur + 1, 1); }
+    else if (e.key === 'ArrowLeft' && !e.target.closest('.seg')) { e.preventDefault(); show(cur - 1, -1); }
+    else if (e.key === 'Tab') {
+      const f = [...zoom.querySelectorAll('button, a[href], [tabindex="0"]')].filter(x => x.offsetParent !== null);
+      if (!f.length) return;
+      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+    }
+  });
+
+  let sx = 0, sy = 0, tracking = false;
+  const stage = $('zstage');
+  stage.addEventListener('touchstart', e => { const t = e.touches[0]; sx = t.clientX; sy = t.clientY; tracking = e.touches.length === 1; }, {passive: true});
+  stage.addEventListener('touchend', e => {
+    if (!tracking) return; tracking = false;
+    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
+    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.8) show(cur + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
+  }, {passive: true});
+
+  if (location.hash === '#preview') { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
+}
+</script>
+<script>
+/* Smooth wheel scrolling (mouse & trackpad only): glides to each stop and
+   travels a little less per notch. Touch scrolling stays native. */
+(function () {
+  var fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!fine || calm) return;
+  var SPEED = 0.8, EASE = 0.1;
+  var target = scrollY, current = scrollY, running = false;
+  function maxY() { return document.documentElement.scrollHeight - innerHeight; }
+  function locked() {
+    var h = getComputedStyle(document.documentElement).overflowY, b = getComputedStyle(document.body).overflowY;
+    return h === 'hidden' || b === 'hidden';
+  }
+  function inScroller(el) {
+    for (; el && el !== document.body && el !== document.documentElement; el = el.parentElement) {
+      var oy = getComputedStyle(el).overflowY;
+      if ((oy === 'auto' || oy === 'scroll') && el.scrollHeight > el.clientHeight) return true;
+    }
+    return false;
+  }
+  function step() {
+    current += (target - current) * EASE;
+    if (Math.abs(target - current) < 0.5) { current = target; running = false; }
+    scrollTo({ top: current, behavior: 'instant' });
+    if (running) requestAnimationFrame(step);
+  }
+  addEventListener('wheel', function (e) {
+    if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY) || locked() || inScroller(e.target)) return;
+    e.preventDefault();
+    if (!running) { current = scrollY; target = current; }
+    var dy = e.deltaMode === 1 ? e.deltaY * 40 : e.deltaMode === 2 ? e.deltaY * innerHeight : e.deltaY;
+    target = Math.max(0, Math.min(maxY(), target + dy * SPEED));
+    if (!running) { running = true; requestAnimationFrame(step); }
+  }, { passive: false });
+  addEventListener('scroll', function () {
+    if (!running || Math.abs(scrollY - current) > 3) { running = false; current = target = scrollY; }
+  }, { passive: true });
+  addEventListener('resize', function () { target = Math.min(target, maxY()); });
+})();
+</script>
+</body>
+</html>

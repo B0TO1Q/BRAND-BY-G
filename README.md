@@ -6,7 +6,7 @@ Features the Hafele Landscaping build and the Dani Hamm spec concept, plus proce
 
 ## Files
 
-- `index.html`: the whole page (HTML, CSS, no build step)
+- `index.html` Home · `work.html` Work (grid, zoom viewer, write-ups) · `pricing.html` · `about.html` · `faq.html` — plain HTML/CSS, no build step; header, styles and contact section are repeated on each page
 - `img/v3/`: screenshots of each featured page — `d-` desktop full page, `m-` phone full page, `t-` grid tile (re-shoot when those sites change)
 
 ## Go live
