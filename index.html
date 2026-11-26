@@ -114,7 +114,9 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacin
 .live:hover{filter:brightness(1.08)}
 .live svg,.open svg{width:14px;height:14px;flex:none}
 .live:focus-visible,.open:focus-visible{outline:3px solid var(--c-acc);outline-offset:3px}
-.lead{font-family:var(--disp);font-weight:700;font-stretch:112%;letter-spacing:-.02em;font-size:clamp(22px,2.7vw,34px);line-height:1.15;max-width:34ch;margin:clamp(24px,3vw,36px) 0 0;text-wrap:balance}
+.lead{font-family:var(--disp);font-weight:700;font-stretch:112%;letter-spacing:-.02em;font-size:clamp(22px,2.7vw,34px);line-height:1.15;max-width:none;margin:clamp(24px,3vw,36px) 0 0;text-wrap:pretty}
+.lead .phr{display:inline-block}
+@media(max-width:600px){.lead{text-wrap:balance}.lead:not(.keep) .phr{display:inline}}
 .cgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);margin-top:clamp(28px,4vw,44px);align-items:start}
 @media(max-width:860px){.cgrid{grid-template-columns:minmax(0,1fr)}}
 .copy p{margin:0 0 16px;font-size:17px;max-width:62ch}
@@ -302,7 +304,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div><p class="kind">Client build · Landscaping &amp; snow removal</p><h2 id="haf-h">Hafele Landscaping</h2></div>
       <div class="acts"><span class="tag">Draft with the owner</span><button class="open" type="button" data-open="0">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
-    <p class="lead">A site that knows what season it is — and an estimate in two taps, from the driveway.</p>
+    <p class="lead"><span class="phr">A site that knows what season it is&nbsp;—</span> <span class="phr">and an estimate in two taps,</span> <span class="phr">from the driveway.</span></p>
     <div class="cgrid">
       <div class="copy">
         <p>Hafele is a Burlington, CT crew covering lawn and turf care, grounds maintenance, lawn renovation, gutters and snow removal across fifteen towns in Hartford and Litchfield counties. The brief: classic, professional, built to last — and turn visits into estimate requests.</p>
@@ -335,7 +337,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div><p class="kind">Spec concept · Wildlife photography</p><h2 id="dani-h">Dani Hamm</h2></div>
       <div class="acts"><span class="tag">Spec concept</span><button class="open" type="button" data-open="3">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
-    <p class="lead">A gallery that feels like being out there at first light.</p>
+    <p class="lead keep"><span class="phr">A gallery that feels like being</span> <span class="phr">out there at first light.</span></p>
     <div class="cgrid">
       <div class="copy">
         <p>A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Dark, cinematic, quiet type, and the photos given the whole screen. Colour blocks stand in for her photos until she supplies her own.</p>
@@ -368,7 +370,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div><p class="kind">Mobile detailing · Luxury vehicles</p><h2 id="rei-h">Reillo Private Detail</h2></div>
       <div class="acts"><span class="tag">In progress</span><button class="open" type="button" data-open="8">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
-    <p class="lead">Showroom gloss, delivered — with a builder that prices the detail before the first phone call.</p>
+    <p class="lead"><span class="phr">Showroom gloss, delivered&nbsp;—</span> <span class="phr">with a builder that prices the detail</span> <span class="phr">before the first phone call.</span></p>
     <div class="cgrid">
       <div class="copy">
         <p>A luxury mobile detailing service: paint correction, ceramic coatings and concierge interior care at the client's home or office. The brief: super sleek, interactive and adaptive.</p>
