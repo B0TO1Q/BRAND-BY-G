@@ -20,9 +20,12 @@
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/archivo.woff2?v=2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter.woff2?v=2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Archivo;src:url(fonts/archivo.woff2?v=2) format("woff2");font-weight:400 900;font-stretch:100% 125%;font-display:swap}
+@font-face{font-family:Inter;src:url(fonts/inter.woff2?v=2) format("woff2");font-weight:400 600;font-display:swap}
+</style>
 <style>
 /* VOICE: plain-spoken local builder, confident, no fluff
    IDEA: a job folder — each site filed as a case with a spec sheet, shown in its client's own colours
@@ -191,8 +194,9 @@ dl.spec a{color:var(--c-acc)}
 .plan{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:clamp(22px,2.6vw,32px);display:grid;grid-template-rows:auto auto auto auto auto 1fr;align-content:start}
 @supports (grid-template-rows:subgrid){@media(min-width:961px){.plans{grid-template-rows:repeat(6,auto)}.plan{grid-row:span 6;grid-template-rows:subgrid;row-gap:0}}}
 .plan.main{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.plan .step{font-size:13px;font-weight:600;color:var(--acc);margin:0 0 10px}
-.plan h3{font-size:clamp(20px,1.9vw,24px);line-height:1.1;margin:0;align-self:end}
+.plan .step{font-size:13px;font-weight:600;color:light-dark(#B23D15,#F08A62);margin:0 0 10px}
+.plan.main .step{color:light-dark(#F08A62,#B23D15)}
+.plan h2{font-size:clamp(20px,1.9vw,24px);line-height:1.1;margin:0;align-self:end}
 .plan .price{font-family:var(--disp);font-size:clamp(40px,4vw,54px);font-weight:900;font-stretch:118%;letter-spacing:-.035em;line-height:1;margin:16px 0 6px;white-space:nowrap}
 .plan .pnote{margin:0;font-size:14px;font-weight:600;opacity:.7}
 .plan .pdesc{margin:14px 0 0;font-size:15px;opacity:.9}
@@ -308,7 +312,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     <div class="plans">
       <div class="plan main">
         <p class="step">1 · Build it</p>
-        <h3>Website build</h3>
+        <h2>Website build</h2>
         <p class="price">$2,500</p>
         <p class="pnote">One-time · up to 3 pages</p>
         <p class="pdesc">Designed and built for your business, then handed off clean.</p>
@@ -320,7 +324,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </div>
       <div class="plan">
         <p class="step">2 · Be found</p>
-        <h3>Be Found</h3>
+        <h2>Be Found</h2>
         <p class="price">$1,500</p>
         <p class="pnote">One-time · starting price</p>
         <p class="pdesc">Puts you on Google search and maps for people looking in your towns.</p>
@@ -333,7 +337,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </div>
       <div class="plan">
         <p class="step">3 · Keep it fresh</p>
-        <h3>Care plan</h3>
+        <h2>Care plan</h2>
         <p class="price">$75</p>
         <p class="pnote">Per month, per site · cancel anytime</p>
         <p class="pdesc">Small updates, like new photos, hours, prices or a changed service, so the site never goes stale.</p>
@@ -359,8 +363,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <p class="sub">The rest of your brand, so it matches everywhere your name shows up.</p>
       <div class="agrid">
         <div class="add"><h4>Logo refresh</h4><p class="ap">from $350 <small>per logo</small></p><p>A cleaner, sharper version of the logo you already have, ready for signs, shirts and the web.</p><p class="eg">Done for <strong>Bridge 9 Barber Co.</strong></p></div>
-        <div class="add"><h4>Email signature</h4><p class="ap">$150 <small>per design</small></p><p>Your logo, name, number and links at the bottom of every email, built to look right in Gmail and Outlook. Each extra person on your team is $25.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
-        <div class="add"><h4>Share &amp; social images</h4><p class="ap">$200 <small>per set of 3</small></p><p>The picture that shows up when your link is texted or posted, plus a matching profile and cover image. Extra images are $50 each.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
+        <div class="add"><h4>Email signature</h4><p class="ap">$150 <small>per design</small></p><p>Your logo, name, number and links at the bottom of every email, built to look right in Gmail and Outlook.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
+        <div class="add"><h4>Share &amp; social images</h4><p class="ap">$200 <small>per set of 3</small></p><p>The picture that shows up when your link is texted or posted, plus a matching profile and cover image.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
         <div class="add"><h4>Domain &amp; Google setup</h4><p class="ap">$200 <small>one-time</small></p><p>Your own .com, connected and secure, with your business details set up so Google can read them. The domain itself is yours to pay for, usually yearly.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
         <div class="add"><h4>Extra blog post or town page</h4><p class="ap">$150 <small>each</small></p><p>One more how-to post or town page, written for your customers and built to show up on Google. Same rate as the monthly content plan.</p><p class="eg">Pairs with <strong>Be Found</strong></p></div>
         <div class="add"><h4>Google profile update</h4><p class="ap">$75 <small>per update</small></p><p>New photos, services, hours or a seasonal post on your Google Business Profile, so your listing stays as fresh as your site.</p><p class="eg">Included in the <strong>care plan</strong> for small changes</p></div>

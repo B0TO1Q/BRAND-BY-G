@@ -20,9 +20,13 @@
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/archivo.woff2?v=2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter.woff2?v=2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/v3/hero-hafele.webp?v=1" as="image" fetchpriority="high">
+<style>
+@font-face{font-family:Archivo;src:url(fonts/archivo.woff2?v=2) format("woff2");font-weight:400 900;font-stretch:100% 125%;font-display:swap}
+@font-face{font-family:Inter;src:url(fonts/inter.woff2?v=2) format("woff2");font-weight:400 600;font-display:swap}
+</style>
 <style>
 /* VOICE: plain-spoken local builder, confident, no fluff
    IDEA: a job folder — each site filed as a case with a spec sheet, shown in its client's own colours
@@ -73,9 +77,9 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacin
 .br .bar{height:28px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#24272A}
 .br .bar i{width:9px;height:9px;border-radius:50%;background:#555A5E}
 .br .bar span{margin-left:10px;font-size:11px;color:#A9AEB2;background:#33373B;border-radius:4px;padding:2px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.br img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+.br img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top}
 .ph{position:absolute;border-radius:18px;padding:3px;background:#0E100E;box-shadow:0 30px 50px -18px rgba(0,0,0,.55)}
-.ph img{border-radius:15px;width:100%;aspect-ratio:390/800;object-fit:cover;object-position:top}
+.ph img{border-radius:15px;width:100%;height:auto;aspect-ratio:390/800;object-fit:cover;object-position:top}
 .s1{left:0;top:0;width:62%;z-index:2}
 .s2{right:0;top:14%;width:50%;z-index:1}
 .s3{left:56%;bottom:-4%;width:15%;z-index:3}
@@ -308,9 +312,9 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <p class="where">George Blanchard Jr. · Plantsville, Connecticut</p>
     </div>
     <div class="stage" aria-hidden="true">
-      <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/v3/d-hafele-home.webp?v=7" alt=""></div>
-      <div class="br s2"><div class="bar"><i></i><i></i><i></i><span>Dani Hamm — Prints &amp; goods</span></div><img src="img/v3/d-dani-shop.webp?v=7" alt="" style="background:#0B1416 url(img/v3/bg-dani-d.webp?v=7) center top/cover no-repeat"></div>
-      <div class="ph s3"><img src="img/v3/m-hafele-home.webp?v=7" alt=""></div>
+      <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/v3/hero-hafele.webp?v=1" alt="" width="1200" height="750" fetchpriority="high"></div>
+      <div class="br s2"><div class="bar"><i></i><i></i><i></i><span>Dani Hamm — Prints &amp; goods</span></div><img src="img/v3/hero-dani.webp?v=1" alt="" width="1200" height="750"></div>
+      <div class="ph s3"><img src="img/v3/hero-phone.webp?v=1" alt="" width="360" height="738"></div>
     </div>
   </div>
 </section>
@@ -323,15 +327,15 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     </div>
     <div class="pgrid">
       <a class="tile" href="work.html#hafele" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373">
-        <span class="shot"><img src="img/v3/t-hafele-home.webp?v=7" alt="" loading="lazy"><span class="badge">Scores 97+ on Google's speed test</span></span>
+        <span class="shot"><img src="img/v3/t-hafele-home.webp?v=9" srcset="img/v3/t-hafele-home-sm.webp?v=9 300w, img/v3/t-hafele-home.webp?v=9 600w" sizes="(max-width:860px) 92vw, 380px" alt="" width="600" height="1500" loading="lazy"><span class="badge">Scores 97+ on Google's speed test</span></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Live</span></span>
       </a>
       <a class="tile" href="work.html#dani-hamm" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8">
-        <span class="shot bgdani"><img src="img/v3/t-dani-home.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><img src="img/v3/t-dani-home.webp?v=9" srcset="img/v3/t-dani-home-sm.webp?v=9 300w, img/v3/t-dani-home.webp?v=9 600w" sizes="(max-width:860px) 92vw, 380px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Concept</span></span>
       </a>
       <a class="tile" href="work.html#reillo" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E">
-        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-top.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-top.webp?v=9" srcset="img/v3/t-reillo-top-sm.webp?v=9 300w, img/v3/t-reillo-top.webp?v=9 600w" sizes="(max-width:860px) 92vw, 380px" alt="" width="600" height="1250" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo Private Detail</span><span class="pg">In progress</span></span>
       </a>
     </div>
@@ -356,7 +360,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 
 <section class="hsec hab" aria-labelledby="hab-h">
   <div class="wrap">
-    <figure class="portrait"><img src="img/g.webp?v=1" alt="Portrait of George Blanchard Jr." loading="lazy"></figure>
+    <figure class="portrait"><img src="img/g-400.webp?v=1" alt="Portrait of George Blanchard Jr." width="400" height="500" loading="lazy"></figure>
     <div>
       <h2 id="hab-h">You talk to the guy building it<span class="dot">.</span></h2>
       <p>I'm G, based in Plantsville, Connecticut. From the first call to launch and after, you deal with me.</p>

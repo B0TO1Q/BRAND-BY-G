@@ -20,9 +20,12 @@
 <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/archivo.woff2?v=2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter.woff2?v=2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Archivo;src:url(fonts/archivo.woff2?v=2) format("woff2");font-weight:400 900;font-stretch:100% 125%;font-display:swap}
+@font-face{font-family:Inter;src:url(fonts/inter.woff2?v=2) format("woff2");font-weight:400 600;font-display:swap}
+</style>
 <style>
 /* VOICE: plain-spoken local builder, confident, no fluff
    IDEA: a job folder — each site filed as a case with a spec sheet, shown in its client's own colours
@@ -145,6 +148,15 @@ dl.spec a{color:var(--c-acc)}
 .swatch{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:4px;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
 .note{font-size:13px;color:var(--c-soft);margin-top:14px}
 
+.wu{margin-top:clamp(20px,3vw,28px)}
+.wu summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 18px;border:1px solid var(--c-rule);border-radius:8px;font-weight:600;font-size:15px;color:var(--c-ink)}
+.wu summary::-webkit-details-marker{display:none}
+.wu summary::after{content:"";width:8px;height:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.wu[open] summary::after{transform:rotate(-135deg) translate(-2px,-1px)}
+.wu summary:hover{border-color:var(--c-acc)}
+.wu summary:focus-visible{outline:3px solid var(--c-acc);outline-offset:3px}
+.wu .wc,.wu[open] .wo{display:none}.wu[open] .wc{display:inline}
+.case{padding:clamp(48px,6vw,80px) 0}
 /* zoom viewer */
 .zoom{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--z-bg);color:var(--z-ink);padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
 .zoom[hidden]{display:none}
@@ -314,83 +326,83 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     </ul>
     <div class="grid">
       <button class="tile" type="button" data-i="0" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Home">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-home.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-home.webp?v=9" srcset="img/v3/t-hafele-home-sm.webp?v=9 300w, img/v3/t-hafele-home.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="1" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Services">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-services.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-services.webp?v=9" srcset="img/v3/t-hafele-services-sm.webp?v=9 300w, img/v3/t-hafele-services.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Services</span></span>
       </button>
       <button class="tile" type="button" data-i="2" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Blog">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-blog.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-blog.webp?v=9" srcset="img/v3/t-hafele-blog-sm.webp?v=9 300w, img/v3/t-hafele-blog.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1121" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Blog</span></span>
       </button>
       <button class="tile" type="button" data-i="3" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Blog post">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-post.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-post.webp?v=9" srcset="img/v3/t-hafele-post-sm.webp?v=9 300w, img/v3/t-hafele-post.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Blog post</span></span>
       </button>
       <button class="tile" type="button" data-i="4" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Service areas">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-areas.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-areas.webp?v=9" srcset="img/v3/t-hafele-areas-sm.webp?v=9 300w, img/v3/t-hafele-areas.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1156" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Service areas</span></span>
       </button>
       <button class="tile" type="button" data-i="5" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Town page">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-town.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-town.webp?v=9" srcset="img/v3/t-hafele-town-sm.webp?v=9 300w, img/v3/t-hafele-town.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Town page</span></span>
       </button>
       <button class="tile" type="button" data-i="6" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, About &amp; contact">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-about.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-about.webp?v=9" srcset="img/v3/t-hafele-about-sm.webp?v=9 300w, img/v3/t-hafele-about.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1320" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">About &amp; contact</span></span>
       </button>
       <button class="tile" type="button" data-i="7" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Home">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-home.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-home.webp?v=9" srcset="img/v3/t-dani-home-sm.webp?v=9 300w, img/v3/t-dani-home.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="8" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Shop">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-shop.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-shop.webp?v=9" srcset="img/v3/t-dani-shop-sm.webp?v=9 300w, img/v3/t-dani-shop.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="628" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Shop</span></span>
       </button>
       <button class="tile" type="button" data-i="9" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Product">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-product.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-product.webp?v=9" srcset="img/v3/t-dani-product-sm.webp?v=9 300w, img/v3/t-dani-product.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="649" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Product</span></span>
       </button>
       <button class="tile" type="button" data-i="10" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, About">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-about.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-about.webp?v=9" srcset="img/v3/t-dani-about-sm.webp?v=9 300w, img/v3/t-dani-about.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="465" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">About</span></span>
       </button>
       <button class="tile" type="button" data-i="11" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Contact">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-contact.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-contact.webp?v=9" srcset="img/v3/t-dani-contact-sm.webp?v=9 300w, img/v3/t-dani-contact.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="427" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Contact</span></span>
       </button>
       <button class="tile" type="button" data-i="12" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Home">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-top.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-top.webp?v=9" srcset="img/v3/t-reillo-top-sm.webp?v=9 300w, img/v3/t-reillo-top.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1250" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="13" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Package builder">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-builder.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-builder.webp?v=9" srcset="img/v3/t-reillo-builder-sm.webp?v=9 300w, img/v3/t-reillo-builder.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1250" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Package builder</span></span>
       </button>
       <button class="tile" type="button" data-i="14" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Membership">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-club.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-club.webp?v=9" srcset="img/v3/t-reillo-club-sm.webp?v=9 300w, img/v3/t-reillo-club.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="945" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Membership</span></span>
       </button>
       <button class="tile" type="button" data-i="15" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Booking">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-book.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-book.webp?v=9" srcset="img/v3/t-reillo-book-sm.webp?v=9 300w, img/v3/t-reillo-book.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="387" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Booking</span></span>
       </button>
       <button class="tile" type="button" data-i="16" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Home">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-home.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-home.webp?v=9" srcset="img/v3/t-prestige-home-sm.webp?v=9 300w, img/v3/t-prestige-home.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="17" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Services">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-services.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-services.webp?v=9" srcset="img/v3/t-prestige-services-sm.webp?v=9 300w, img/v3/t-prestige-services.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1339" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Services</span></span>
       </button>
       <button class="tile" type="button" data-i="18" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Town page">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-town.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-town.webp?v=9" srcset="img/v3/t-prestige-town-sm.webp?v=9 300w, img/v3/t-prestige-town.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Town page</span></span>
       </button>
       <button class="tile" type="button" data-i="19" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Golden Throne Club">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-club.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-club.webp?v=9" srcset="img/v3/t-prestige-club-sm.webp?v=9 300w, img/v3/t-prestige-club.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1136" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Golden Throne Club</span></span>
       </button>
     </div>
@@ -398,19 +410,19 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     <p class="sub">Custom software for a local car dealership, shown with demo cars. Tap one to open it.</p>
     <div class="grid">
       <button class="tile" type="button" data-i="20" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, Customer page">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-car.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-car.webp?v=9" srcset="img/v3/t-shakers-car-sm.webp?v=9 300w, img/v3/t-shakers-car.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="690" loading="lazy"></span>
         <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">Customer page</span></span>
       </button>
       <button class="tile" type="button" data-i="21" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, Floor console">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-console.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-console.webp?v=9" srcset="img/v3/t-shakers-console-sm.webp?v=9 300w, img/v3/t-shakers-console.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="375" loading="lazy"></span>
         <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">Floor console</span></span>
       </button>
       <button class="tile" type="button" data-i="22" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, QR codes">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-qr.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-qr.webp?v=9" srcset="img/v3/t-shakers-qr-sm.webp?v=9 300w, img/v3/t-shakers-qr.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="564" loading="lazy"></span>
         <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">QR codes</span></span>
       </button>
       <button class="tile" type="button" data-i="23" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Shaker&#x27;s Lot Map, Lot map">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-lot.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-lot.webp?v=9" srcset="img/v3/t-shakers-lot-sm.webp?v=9 300w, img/v3/t-shakers-lot.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="375" loading="lazy"></span>
         <span class="lbl"><span class="cl">Shaker&#x27;s Lot Map</span><span class="pg">Lot map</span></span>
       </button>
     </div>
@@ -424,6 +436,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div class="acts"><span class="tag">Live</span><button class="open" type="button" data-open="0">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead"><span class="phr">A site that knows what season it is&nbsp;—</span> <span class="phr">and an estimate in two taps,</span> <span class="phr">from the driveway.</span></p>
+    <details class="wu">
+      <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
         <p>Hafele is a Burlington, CT crew covering lawn and turf care, grounds maintenance, lawn renovation, gutters and snow removal across fifteen towns in Hartford and Litchfield counties. The brief: classic, professional, built to last — and turn visits into estimate requests.</p>
@@ -450,6 +464,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <dt>Live</dt><dd><a href="https://hafelelandscaping.com/" target="_blank" rel="noopener">hafelelandscaping.com</a></dd>
       </dl>
     </div>
+    </details>
   </div>
 </section>
 
@@ -460,6 +475,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div class="acts"><span class="tag">Concept</span><button class="open" type="button" data-open="7">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead keep"><span class="phr">A gallery that feels like being</span> <span class="phr">out there at first light.</span></p>
+    <details class="wu">
+      <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
         <p>A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Dark, cinematic, quiet type, and the photos given the whole screen. Colour blocks stand in for her photos until she supplies her own.</p>
@@ -483,6 +500,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <p class="note">Not affiliated with or approved by Dani Hamm.</p>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -493,6 +511,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div class="acts"><span class="tag">In progress</span><button class="open" type="button" data-open="12">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead"><span class="phr">Showroom gloss, delivered&nbsp;—</span> <span class="phr">with a builder that prices the detail</span> <span class="phr">before the first phone call.</span></p>
+    <details class="wu">
+      <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
         <p>A luxury mobile detailing service: paint correction, ceramic coatings and concierge interior care at the client's home or office. The brief: super sleek, interactive and adaptive.</p>
@@ -516,6 +536,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <p class="note">Prices and contact details on the site are placeholders for now.</p>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -526,6 +547,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div class="acts"><span class="tag">Concept</span><button class="open" type="button" data-open="16">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/PRESTIGE/" target="_blank" rel="noopener">Visit the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead"><span class="phr">Breathe easy&nbsp;—</span> <span class="phr">an upscale plumber’s site</span> <span class="phr">with booking in four taps.</span></p>
+    <details class="wu">
+      <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
         <p>A ground-up rebuild of a local plumbing company’s website, aimed at homeowners who want it done right. It keeps every page and address of the current site, so nothing is lost on Google, with a completely new look that feels like a calm, modern home.</p>
@@ -549,6 +572,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <p class="note">A concept for Prestige Plumbing Werks. It isn’t their live website.</p>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
@@ -559,6 +583,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <div class="acts"><span class="tag">In testing</span><button class="open" type="button" data-open="20">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button></div>
     </div>
     <p class="lead"><span class="phr">Scan a car on the lot,</span> <span class="phr">and it lights up on the map.</span></p>
+    <details class="wu">
+      <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
         <p>Two connected tools built for Shaker’s Family Ford in Watertown, to make buying a car faster for shoppers and easier for the people selling them.</p>
@@ -580,6 +606,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <p class="note">Shown with demo cars and pretend shoppers; no real inventory or customer data. These are staff tools, so there’s no public link.</p>
       </div>
     </div>
+    </details>
   </div>
 </section>
 
