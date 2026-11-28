@@ -157,47 +157,52 @@ dl.spec a{color:var(--c-acc)}
 .wu summary:focus-visible{outline:3px solid var(--c-acc);outline-offset:3px}
 .wu .wc,.wu[open] .wo{display:none}.wu[open] .wc{display:inline}
 .case{padding:clamp(48px,6vw,80px) 0}
-/* zoom viewer */
-.zoom{position:fixed;inset:0;z-index:60;display:flex;flex-direction:column;background:var(--z-bg);color:var(--z-ink);padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
-.zoom[hidden]{display:none}
-.zin{display:flex;flex-direction:column;flex:1;min-height:0}
-.zbar{display:flex;align-items:center;gap:10px 14px;flex-wrap:wrap;padding:12px max(3vw,14px);border-bottom:1px solid var(--z-rule)}
-.zb{all:unset;box-sizing:border-box;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;min-width:44px;padding:0 14px;border-radius:8px;border:1px solid var(--z-rule);font:600 15px/1 var(--text);color:var(--z-ink);white-space:nowrap}
-.zb:hover{border-color:var(--z-acc)}
-.zb:focus-visible,.zt button:focus-visible,.zvp:focus-visible{outline:3px solid var(--z-acc);outline-offset:2px}
-.zb svg{width:16px;height:16px;flex:none}
-.ztitle{flex:1;min-width:160px;display:flex;flex-direction:column;gap:2px}
-.ztitle b{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.03em;font-size:clamp(18px,2vw,22px);line-height:1.1}
-.ztitle span{font-size:14px;color:var(--z-soft)}
-.seg{display:inline-flex;border:1px solid var(--z-rule);border-radius:8px;padding:3px;gap:3px}
-.seg button{all:unset;box-sizing:border-box;cursor:pointer;min-height:38px;padding:0 12px;border-radius:6px;font:500 14px/38px var(--text);color:var(--z-ink)}
-.seg button[aria-pressed=true]{background:var(--z-ink);color:var(--z-bg)}
-.seg button:focus-visible{outline:3px solid var(--z-acc);outline-offset:1px}
-.zlive[hidden]{display:none}
-.zlive{background:var(--z-acc);color:var(--z-bg);border-color:var(--z-acc);text-decoration:none}
-.zt{display:flex;gap:6px;padding:10px max(3vw,14px) 0;overflow-x:auto;scrollbar-width:none}
-.zt button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;min-height:40px;padding:0 14px;border-radius:99px;border:1px solid var(--z-rule);font:500 14px/38px var(--text);color:var(--z-ink)}
-.zt button[aria-selected=true]{background:var(--z-ink);color:var(--z-bg);border-color:var(--z-ink)}
-.zstage{flex:1;min-height:0;display:flex;align-items:stretch;justify-content:center;gap:14px;padding:14px max(3vw,14px) 16px;touch-action:pan-y}
-.zframe{display:flex;flex-direction:column;width:min(1200px,100%);min-height:0;border-radius:12px;overflow:hidden;background:#0E100E;box-shadow:0 30px 60px -24px rgba(0,0,0,.6)}
-.zframe .bar{height:32px;flex:none;display:flex;align-items:center;gap:6px;padding:0 14px;background:#24272A}
-.zframe .bar i{width:10px;height:10px;border-radius:50%;background:#555A5E;flex:none}
-.zframe .bar span{margin-left:10px;font-size:12px;color:#B5BABE;background:#33373B;border-radius:5px;padding:4px 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.zvp{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;background:#fff;-webkit-overflow-scrolling:touch}
-.zvp img{display:block;width:100%;height:auto}
-.zvp{background-color:#fff;background-size:cover;background-position:center top;background-repeat:no-repeat}
-.shot.bgdani{background:#0B1416 url(img/v3/bg-dani-d.webp?v=7) center top/cover no-repeat}
-.zframe.phone{width:min(392px,100%);border-radius:34px;padding:4px}
-.zframe.phone .bar{display:none}
-.zframe.phone .zvp{border-radius:30px}
-.znav{align-self:center;flex:none}
-@media(max-width:700px){.znav{display:none}.zbar{gap:8px}.ztitle{flex:1 1 calc(100% - 64px)}.zb.zback span{display:none}}
-.zfoot{display:flex;justify-content:center;gap:6px;padding:0 0 12px}
-.zfoot i{width:7px;height:7px;border-radius:50%;background:var(--z-rule)}
-.zfoot i.on{background:var(--z-acc)}
-.slide-l{animation:sl .28s ease}.slide-r{animation:sr .28s ease}
-@keyframes sl{from{transform:translateX(40px);opacity:.3}}@keyframes sr{from{transform:translateX(-40px);opacity:.3}}
-@media(prefers-reduced-motion:reduce){.tile:hover .shot img{transform:none}.slide-l,.slide-r{animation:none}}
+
+/* project sections with live previews */
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
+.jump a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border:1px solid var(--rule);border-radius:99px;text-decoration:none;font-size:14px;font-weight:500}
+.jump a:hover{border-color:var(--ink)}
+.jump a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sc)}
+.work{padding-bottom:clamp(32px,4vw,48px)}
+.cx{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,4vw,64px);align-items:start}
+.cx.flip{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.cx.flip .cinfo{order:2}
+@media(max-width:900px){.cx,.cx.flip{grid-template-columns:minmax(0,1fr)}.cx.flip .cinfo{order:0}}
+.cinfo .st{position:static;display:inline-flex;margin:0 0 14px;background:color-mix(in srgb,var(--c-ink) 12%,transparent);color:var(--c-ink)}
+.cinfo h2{font-size:clamp(30px,4vw,48px)}
+.cinfo .lead{font-size:clamp(20px,2.1vw,27px);margin-top:18px}
+.cinfo .sum{margin:16px 0 0;font-size:17px;color:var(--c-soft);max-width:56ch}
+.cinfo .acts{margin-top:22px}
+.cinfo .wu{margin-top:14px}
+.cinfo .cgrid{grid-template-columns:minmax(0,1fr);margin-top:24px;gap:24px}
+.pv{position:sticky;top:84px}
+@media(max-width:900px){.pv{position:static}}
+.pvbar{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.pvtabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1 1 260px;min-width:0;padding:2px}
+.pvtabs::-webkit-scrollbar{display:none}
+.pvtabs button,.pvseg button{all:unset;box-sizing:border-box;cursor:pointer;flex:none;min-height:38px;padding:0 13px;border-radius:99px;border:1px solid var(--c-rule);font:500 14px/36px var(--text);color:var(--c-ink);white-space:nowrap}
+.pvtabs button[aria-selected=true]{background:var(--c-ink);color:var(--c-bg);border-color:var(--c-ink)}
+.pvseg{display:inline-flex;gap:3px;border:1px solid var(--c-rule);border-radius:99px;padding:3px;flex:none}
+.pvseg button{border:0;min-height:32px;line-height:32px;padding:0 12px}
+.pvseg button[aria-pressed=true]{background:var(--c-ink);color:var(--c-bg)}
+.pvtabs button:focus-visible,.pvseg button:focus-visible,.pvtap:focus-visible,.pvdone:focus-visible{outline:3px solid var(--c-acc);outline-offset:2px}
+.pvf{position:relative;margin:0 auto;background:#0E100E;border-radius:12px;overflow:hidden;box-shadow:0 30px 60px -24px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.06)}
+.pvf .bar{height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#24272A}
+.pvf .bar i{width:9px;height:9px;border-radius:50%;background:#555A5E;flex:none}
+.pvf .bar span{margin-left:8px;font-size:12px;color:#B5BABE;background:#33373B;border-radius:5px;padding:3px 10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pvs{position:relative;overflow:hidden;aspect-ratio:16/11;background:var(--pv-bg,#fff) var(--pv-poster,none) center top/cover no-repeat}
+.pvf.phone{width:min(300px,100%);border-radius:30px;padding:4px}
+.pvf.phone .bar{display:none}
+.pvf.phone .pvs{aspect-ratio:390/800;border-radius:26px;background-image:none}
+.pvs iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:transparent;opacity:0;transition:opacity .3s}
+.pvs iframe.on{opacity:1}
+.pvs .pvimg{position:absolute;inset:0;overflow-y:auto;overscroll-behavior:contain}
+.pvs .pvimg img{width:100%;height:auto}
+.pvtap{all:unset;box-sizing:border-box;position:absolute;inset:0;z-index:2;display:flex;align-items:flex-end;justify-content:center;padding:16px;cursor:pointer;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 45%)}
+.pvtap span{background:rgba(14,16,14,.9);color:#fff;font:600 14px/1 var(--text);padding:12px 16px;border-radius:99px}
+.pvtap[hidden],.pvdone[hidden]{display:none}
+.pvdone{all:unset;box-sizing:border-box;cursor:pointer;position:absolute;right:10px;top:10px;z-index:3;background:rgba(14,16,14,.9);color:#fff;font:600 13px/1 var(--text);padding:10px 14px;border-radius:99px}
+.pvf.phone .pvdone{top:14px;right:14px}
+.pvnote{font-size:13px;color:var(--c-soft);margin:12px 0 0;text-align:center}
 /* process */
 .band{padding:clamp(56px,8vw,112px) 0}
 .sec h2{font-size:clamp(30px,4.2vw,48px)}
@@ -317,130 +322,36 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <section class="work" id="work" aria-labelledby="work-h">
   <div class="wrap">
     <h1 id="work-h" style="font-size:clamp(36px,5.4vw,64px)">Work<span class="dot">.</span></h1>
-    <p class="sub">Live client sites, work in progress and concepts, each one labeled. Tap any page to open it full size and scroll through it.</p>
+    <p class="sub">Live client sites, work in progress and concepts, each one labeled. Every preview is the real site: scroll it, click around, and switch pages.</p>
     <ul class="legend" aria-label="What the labels mean">
       <li class="st-live"><span><b>Live</b> · running for a real business</span></li>
       <li class="st-prog"><span><b>In progress</b> · being built now</span></li>
       <li class="st-concept"><span><b>Concept</b> · a design idea, not the business's real site</span></li>
       <li class="st-test"><span><b>In testing</b> · built, being tried out</span></li>
     </ul>
-    <div class="grid">
-      <button class="tile" type="button" data-i="0" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Home">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-home.webp?v=9" srcset="img/v3/t-hafele-home-sm.webp?v=9 300w, img/v3/t-hafele-home.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Home</span></span>
-      </button>
-      <button class="tile" type="button" data-i="1" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Services">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-services.webp?v=9" srcset="img/v3/t-hafele-services-sm.webp?v=9 300w, img/v3/t-hafele-services.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Services</span></span>
-      </button>
-      <button class="tile" type="button" data-i="2" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Blog">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-blog.webp?v=9" srcset="img/v3/t-hafele-blog-sm.webp?v=9 300w, img/v3/t-hafele-blog.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1121" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Blog</span></span>
-      </button>
-      <button class="tile" type="button" data-i="3" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Blog post">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-post.webp?v=9" srcset="img/v3/t-hafele-post-sm.webp?v=9 300w, img/v3/t-hafele-post.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Blog post</span></span>
-      </button>
-      <button class="tile" type="button" data-i="4" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Service areas">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-areas.webp?v=9" srcset="img/v3/t-hafele-areas-sm.webp?v=9 300w, img/v3/t-hafele-areas.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1156" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Service areas</span></span>
-      </button>
-      <button class="tile" type="button" data-i="5" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Town page">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-town.webp?v=9" srcset="img/v3/t-hafele-town-sm.webp?v=9 300w, img/v3/t-hafele-town.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Town page</span></span>
-      </button>
-      <button class="tile" type="button" data-i="6" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, About &amp; contact">
-        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-about.webp?v=9" srcset="img/v3/t-hafele-about-sm.webp?v=9 300w, img/v3/t-hafele-about.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1320" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">About &amp; contact</span></span>
-      </button>
-      <button class="tile" type="button" data-i="7" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Home">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-home.webp?v=9" srcset="img/v3/t-dani-home-sm.webp?v=9 300w, img/v3/t-dani-home.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Home</span></span>
-      </button>
-      <button class="tile" type="button" data-i="8" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Shop">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-shop.webp?v=9" srcset="img/v3/t-dani-shop-sm.webp?v=9 300w, img/v3/t-dani-shop.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="628" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Shop</span></span>
-      </button>
-      <button class="tile" type="button" data-i="9" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Product">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-product.webp?v=9" srcset="img/v3/t-dani-product-sm.webp?v=9 300w, img/v3/t-dani-product.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="649" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Product</span></span>
-      </button>
-      <button class="tile" type="button" data-i="10" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, About">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-about.webp?v=9" srcset="img/v3/t-dani-about-sm.webp?v=9 300w, img/v3/t-dani-about.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="465" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">About</span></span>
-      </button>
-      <button class="tile" type="button" data-i="11" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Contact">
-        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-contact.webp?v=9" srcset="img/v3/t-dani-contact-sm.webp?v=9 300w, img/v3/t-dani-contact.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="427" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Contact</span></span>
-      </button>
-      <button class="tile" type="button" data-i="12" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Home">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-top.webp?v=9" srcset="img/v3/t-reillo-top-sm.webp?v=9 300w, img/v3/t-reillo-top.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1250" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Home</span></span>
-      </button>
-      <button class="tile" type="button" data-i="13" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Package builder">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-builder.webp?v=9" srcset="img/v3/t-reillo-builder-sm.webp?v=9 300w, img/v3/t-reillo-builder.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1250" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Package builder</span></span>
-      </button>
-      <button class="tile" type="button" data-i="14" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Membership">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-club.webp?v=9" srcset="img/v3/t-reillo-club-sm.webp?v=9 300w, img/v3/t-reillo-club.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="945" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Membership</span></span>
-      </button>
-      <button class="tile" type="button" data-i="15" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Booking">
-        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-book.webp?v=9" srcset="img/v3/t-reillo-book-sm.webp?v=9 300w, img/v3/t-reillo-book.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="387" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Reillo</span><span class="pg">Booking</span></span>
-      </button>
-      <button class="tile" type="button" data-i="16" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Home">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-home.webp?v=9" srcset="img/v3/t-prestige-home-sm.webp?v=9 300w, img/v3/t-prestige-home.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Home</span></span>
-      </button>
-      <button class="tile" type="button" data-i="17" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Services">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-services.webp?v=9" srcset="img/v3/t-prestige-services-sm.webp?v=9 300w, img/v3/t-prestige-services.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1339" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Services</span></span>
-      </button>
-      <button class="tile" type="button" data-i="18" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Town page">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-town.webp?v=9" srcset="img/v3/t-prestige-town-sm.webp?v=9 300w, img/v3/t-prestige-town.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1500" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Town page</span></span>
-      </button>
-      <button class="tile" type="button" data-i="19" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Golden Throne Club">
-        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-club.webp?v=9" srcset="img/v3/t-prestige-club-sm.webp?v=9 300w, img/v3/t-prestige-club.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="1136" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Golden Throne Club</span></span>
-      </button>
-    </div>
-    <h2 class="gh" id="tools-h">Tools</h2>
-    <p class="sub">Custom software for a local car dealership, shown with demo cars. Tap one to open it.</p>
-    <div class="grid">
-      <button class="tile" type="button" data-i="20" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, Customer page">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-car.webp?v=9" srcset="img/v3/t-shakers-car-sm.webp?v=9 300w, img/v3/t-shakers-car.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="690" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">Customer page</span></span>
-      </button>
-      <button class="tile" type="button" data-i="21" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, Floor console">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-console.webp?v=9" srcset="img/v3/t-shakers-console-sm.webp?v=9 300w, img/v3/t-shakers-console.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="375" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">Floor console</span></span>
-      </button>
-      <button class="tile" type="button" data-i="22" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, QR codes">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-qr.webp?v=9" srcset="img/v3/t-shakers-qr-sm.webp?v=9 300w, img/v3/t-shakers-qr.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="564" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">QR codes</span></span>
-      </button>
-      <button class="tile" type="button" data-i="23" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Shaker&#x27;s Lot Map, Lot map">
-        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-lot.webp?v=9" srcset="img/v3/t-shakers-lot-sm.webp?v=9 300w, img/v3/t-shakers-lot.webp?v=9 600w" sizes="(max-width:640px) 46vw, (max-width:960px) 31vw, 290px" alt="" width="600" height="375" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Shaker&#x27;s Lot Map</span><span class="pg">Lot map</span></span>
-      </button>
-    </div>
+    <ul class="jump" aria-label="Jump to a project">
+      <li class="st-live"><a href="#hafele" style="--sc:#3FBF6F">Hafele Landscaping</a></li>
+      <li><a href="#dani-hamm" style="--sc:#B8C0CA">Dani Hamm</a></li>
+      <li><a href="#reillo" style="--sc:#F2B33D">Reillo</a></li>
+      <li><a href="#prestige" style="--sc:#B8C0CA">Prestige Plumbing</a></li>
+      <li><a href="#dealership-tools" style="--sc:#5AA9F0">Dealership tools</a></li>
+    </ul>
   </div>
 </section>
 
 <section class="case haf" id="hafele" aria-labelledby="haf-h">
   <div class="wrap">
-    <div class="hd">
-      <div><p class="kind">Client build · Landscaping &amp; snow removal</p><h2 id="haf-h">Hafele Landscaping</h2></div>
-      <div class="acts"><span class="tag">Live</span><button class="open" type="button" data-open="0">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
-    </div>
-    <p class="lead"><span class="phr">A site that knows what season it is&nbsp;—</span> <span class="phr">and an estimate in two taps,</span> <span class="phr">from the driveway.</span></p>
-    <details class="wu">
+    <div class="cx">
+      <div class="cinfo">
+        <span class="st st-live">Live</span>
+        <p class="kind">Client build · Landscaping &amp; snow removal</p><h2 id="haf-h">Hafele Landscaping</h2>
+        <p class="lead"><span class="phr">A site that knows what season it is&nbsp;—</span> <span class="phr">and an estimate in two taps,</span> <span class="phr">from the driveway.</span></p>
+        <p class="sum">Hafele is a Burlington, CT crew covering lawn and turf care, grounds maintenance, lawn renovation, gutters and snow removal across fifteen towns in Hartford and Litchfield counties. The brief: classic, professional, built to last — and turn visits into estimate requests.</p>
+        <div class="acts"><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+        <details class="wu">
       <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
-        <p>Hafele is a Burlington, CT crew covering lawn and turf care, grounds maintenance, lawn renovation, gutters and snow removal across fifteen towns in Hartford and Litchfield counties. The brief: classic, professional, built to last — and turn visits into estimate requests.</p>
         <ul class="built">
           <li><strong>A site that changes with the seasons.</strong> It reads today's date and switches to spring, summer, fall or winter, with a season tone on the hero photo and quote options for that time of year, like Fall Cleanup or Reserve Snow Removal. Visitors can flip between seasons with tabs.</li>
           <li><strong>Four-Season Care.</strong> An annual agreement for year-round upkeep, with its own band on Home and Services, a request-a-walkthrough button, and an option in every season.</li>
@@ -465,21 +376,34 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </dl>
     </div>
     </details>
+      </div>
+      <div class="pv" data-site="haf" data-name="Hafele Landscaping" data-pages="[{&quot;p&quot;: &quot;Home&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/&quot;, &quot;k&quot;: &quot;hafele-home&quot;, &quot;a&quot;: &quot;Hafele home page: hero with a seasonal estimate request, quick facts, six services with job photos, customer reviews, the Four-Season Care band, service area, Verse of the Day and footer&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Services&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/services.html&quot;, &quot;k&quot;: &quot;hafele-services&quot;, &quot;a&quot;: &quot;Hafele services page: Four-Season Care, then six services with job photos and estimate buttons, then common questions&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Blog&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/blog/&quot;, &quot;k&quot;: &quot;hafele-blog&quot;, &quot;a&quot;: &quot;Hafele blog: Lawn &amp; Snow Advice for Connecticut Homes, with six seasonal how-to posts&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Blog post&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/blog/fall-lawn-care-connecticut/&quot;, &quot;k&quot;: &quot;hafele-post&quot;, &quot;a&quot;: &quot;Hafele blog post: How to Get Your Lawn Ready for a Connecticut Winter, a seven-step checklist&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Service areas&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/service-areas/&quot;, &quot;k&quot;: &quot;hafele-areas&quot;, &quot;a&quot;: &quot;Hafele service areas hub: lawn care and snow removal across 15 Connecticut towns&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Town page&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/service-areas/burlington-ct/&quot;, &quot;k&quot;: &quot;hafele-town&quot;, &quot;a&quot;: &quot;Hafele town page: Lawn Care &amp; Snow Removal in Burlington, CT, with local property notes and common questions&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;About &amp; contact&quot;, &quot;u&quot;: &quot;https://hafelelandscaping.com/about.html&quot;, &quot;k&quot;: &quot;hafele-about&quot;, &quot;a&quot;: &quot;Hafele about and contact page&quot;, &quot;ul&quot;: &quot;&quot;}]">
+        <div class="pvbar">
+          <div class="pvtabs" role="tablist" aria-label="Hafele Landscaping pages"><button type="button" role="tab" aria-selected="true" data-j="0">Home</button><button type="button" role="tab" aria-selected="false" data-j="1">Services</button><button type="button" role="tab" aria-selected="false" data-j="2">Blog</button><button type="button" role="tab" aria-selected="false" data-j="3">Blog post</button><button type="button" role="tab" aria-selected="false" data-j="4">Service areas</button><button type="button" role="tab" aria-selected="false" data-j="5">Town page</button><button type="button" role="tab" aria-selected="false" data-j="6">About &amp; contact</button></div>
+          <div class="pvseg" role="group" aria-label="Preview size"><button type="button" data-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-mode="phone" aria-pressed="false">Phone</button></div>
+        </div>
+        <div class="pvf">
+          <div class="bar"><i></i><i></i><i></i><span class="pvurl">hafelelandscaping.com/</span></div>
+          <div class="pvs" style="--pv-bg:#fff;--pv-poster:url(img/v3/t-hafele-home.webp?v=9)"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="case dani" id="dani-hamm" aria-labelledby="dani-h">
   <div class="wrap">
-    <div class="hd">
-      <div><p class="kind">Spec concept · Wildlife photography</p><h2 id="dani-h">Dani Hamm</h2></div>
-      <div class="acts"><span class="tag">Concept</span><button class="open" type="button" data-open="7">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
-    </div>
-    <p class="lead keep"><span class="phr">A gallery that feels like being</span> <span class="phr">out there at first light.</span></p>
-    <details class="wu">
+    <div class="cx flip">
+      <div class="cinfo">
+        <span class="st st-concept">Concept</span>
+        <p class="kind">Spec concept · Wildlife photography</p><h2 id="dani-h">Dani Hamm</h2>
+        <p class="lead keep"><span class="phr">A gallery that feels like being</span> <span class="phr">out there at first light.</span></p>
+        <p class="sum">A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Dark, cinematic, quiet type, and the photos given the whole screen. Colour blocks stand in for her photos until she supplies her own.</p>
+        <div class="acts"><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+        <details class="wu">
       <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
-        <p>A portfolio and store concept for a Sony wildlife photographer, built as a pitch. Dark, cinematic, quiet type, and the photos given the whole screen. Colour blocks stand in for her photos until she supplies her own.</p>
         <ul class="built">
           <li><strong>Three full-screen scenes</strong> — first light, fog, the moment — that lead into the work.</li>
           <li><strong>Portfolio</strong> filtered by birds, mammals, landscapes and concerts.</li>
@@ -501,21 +425,34 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </div>
     </div>
     </details>
+      </div>
+      <div class="pv" data-site="dani" data-name="Dani Hamm" data-pages="[{&quot;p&quot;: &quot;Home&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/DANIHAMM/&quot;, &quot;k&quot;: &quot;dani-home&quot;, &quot;a&quot;: &quot;Dani Hamm home page: name over a misty hero, three full-screen scenes, then the filterable portfolio&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Shop&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/DANIHAMM/shop.html&quot;, &quot;k&quot;: &quot;dani-shop&quot;, &quot;a&quot;: &quot;Dani Hamm shop: prints and goods, eight products&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Product&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/DANIHAMM/product.html?item=mug&quot;, &quot;k&quot;: &quot;dani-product&quot;, &quot;a&quot;: &quot;Dani Hamm product page for a mug: pick the photo, options and quantity&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;About&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/DANIHAMM/about.html&quot;, &quot;k&quot;: &quot;dani-about&quot;, &quot;a&quot;: &quot;Dani Hamm about page&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Contact&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/DANIHAMM/contact.html&quot;, &quot;k&quot;: &quot;dani-contact&quot;, &quot;a&quot;: &quot;Dani Hamm contact page with an inquiry form&quot;, &quot;ul&quot;: &quot;&quot;}]">
+        <div class="pvbar">
+          <div class="pvtabs" role="tablist" aria-label="Dani Hamm pages"><button type="button" role="tab" aria-selected="true" data-j="0">Home</button><button type="button" role="tab" aria-selected="false" data-j="1">Shop</button><button type="button" role="tab" aria-selected="false" data-j="2">Product</button><button type="button" role="tab" aria-selected="false" data-j="3">About</button><button type="button" role="tab" aria-selected="false" data-j="4">Contact</button></div>
+          <div class="pvseg" role="group" aria-label="Preview size"><button type="button" data-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-mode="phone" aria-pressed="false">Phone</button></div>
+        </div>
+        <div class="pvf">
+          <div class="bar"><i></i><i></i><i></i><span class="pvurl">b0to1q.github.io/DANIHAMM/</span></div>
+          <div class="pvs" style="--pv-bg:#0B1416;--pv-poster:url(img/v3/bg-dani-d.webp?v=7)"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="case rei" id="reillo" aria-labelledby="rei-h">
   <div class="wrap">
-    <div class="hd">
-      <div><p class="kind">Mobile detailing · Luxury vehicles</p><h2 id="rei-h">Reillo Private Detail</h2></div>
-      <div class="acts"><span class="tag">In progress</span><button class="open" type="button" data-open="12">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
-    </div>
-    <p class="lead"><span class="phr">Showroom gloss, delivered&nbsp;—</span> <span class="phr">with a builder that prices the detail</span> <span class="phr">before the first phone call.</span></p>
-    <details class="wu">
+    <div class="cx">
+      <div class="cinfo">
+        <span class="st st-prog">In progress</span>
+        <p class="kind">Mobile detailing · Luxury vehicles</p><h2 id="rei-h">Reillo Private Detail</h2>
+        <p class="lead"><span class="phr">Showroom gloss, delivered&nbsp;—</span> <span class="phr">with a builder that prices the detail</span> <span class="phr">before the first phone call.</span></p>
+        <p class="sum">A luxury mobile detailing service: paint correction, ceramic coatings and concierge interior care at the client's home or office. The brief: super sleek, interactive and adaptive.</p>
+        <div class="acts"><a class="live" href="https://b0to1q.github.io/REILLO/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+        <details class="wu">
       <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
-        <p>A luxury mobile detailing service: paint correction, ceramic coatings and concierge interior care at the client's home or office. The brief: super sleek, interactive and adaptive.</p>
         <ul class="built">
           <li><strong>Package builder</strong> with live pricing by vehicle size, add-ons and estimated time on site.</li>
           <li><strong>A cinematic first screen:</strong> an animated REILLO wordmark, a film light-leak background and slow-scrolling service tickers.</li>
@@ -537,21 +474,34 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </div>
     </div>
     </details>
+      </div>
+      <div class="pv" data-site="rei" data-name="Reillo Private Detail" data-pages="[{&quot;p&quot;: &quot;Home&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/REILLO/&quot;, &quot;k&quot;: &quot;reillo&quot;, &quot;a&quot;: &quot;Reillo home: animated REILLO wordmark over a light-leak background, service tickers and the package builder below&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Package builder&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/REILLO/#builder&quot;, &quot;k&quot;: &quot;reillo&quot;, &quot;a&quot;: &quot;Reillo package builder: choose vehicle size, services and add-ons with live pricing and time on site&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Membership&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/REILLO/#club&quot;, &quot;k&quot;: &quot;reillo&quot;, &quot;a&quot;: &quot;The Reillo Club: three monthly membership plans&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Booking&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/REILLO/#book&quot;, &quot;k&quot;: &quot;reillo&quot;, &quot;a&quot;: &quot;Reillo booking request form with arrival windows&quot;, &quot;ul&quot;: &quot;&quot;}]">
+        <div class="pvbar">
+          <div class="pvtabs" role="tablist" aria-label="Reillo Private Detail pages"><button type="button" role="tab" aria-selected="true" data-j="0">Home</button><button type="button" role="tab" aria-selected="false" data-j="1">Package builder</button><button type="button" role="tab" aria-selected="false" data-j="2">Membership</button><button type="button" role="tab" aria-selected="false" data-j="3">Booking</button></div>
+          <div class="pvseg" role="group" aria-label="Preview size"><button type="button" data-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-mode="phone" aria-pressed="false">Phone</button></div>
+        </div>
+        <div class="pvf">
+          <div class="bar"><i></i><i></i><i></i><span class="pvurl">b0to1q.github.io/REILLO/</span></div>
+          <div class="pvs" style="--pv-bg:#0A0B0D;--pv-poster:url(img/v3/t-reillo.webp?v=9)"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="case pre" id="prestige" aria-labelledby="pre-h">
   <div class="wrap">
-    <div class="hd">
-      <div><p class="kind">Plumbing · Burlington, CT</p><h2 id="pre-h">Prestige Plumbing Werks</h2></div>
-      <div class="acts"><span class="tag">Concept</span><button class="open" type="button" data-open="16">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/PRESTIGE/" target="_blank" rel="noopener">Visit the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
-    </div>
-    <p class="lead"><span class="phr">Breathe easy&nbsp;—</span> <span class="phr">an upscale plumber’s site</span> <span class="phr">with booking in four taps.</span></p>
-    <details class="wu">
+    <div class="cx flip">
+      <div class="cinfo">
+        <span class="st st-concept">Concept</span>
+        <p class="kind">Plumbing · Burlington, CT</p><h2 id="pre-h">Prestige Plumbing Werks</h2>
+        <p class="lead"><span class="phr">Breathe easy&nbsp;—</span> <span class="phr">an upscale plumber’s site</span> <span class="phr">with booking in four taps.</span></p>
+        <p class="sum">A ground-up rebuild of a local plumbing company’s website, aimed at homeowners who want it done right. It keeps every page and address of the current site, so nothing is lost on Google, with a completely new look that feels like a calm, modern home.</p>
+        <div class="acts"><a class="live" href="https://b0to1q.github.io/PRESTIGE/" target="_blank" rel="noopener">Visit the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+        <details class="wu">
       <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
-        <p>A ground-up rebuild of a local plumbing company’s website, aimed at homeowners who want it done right. It keeps every page and address of the current site, so nothing is lost on Google, with a completely new look that feels like a calm, modern home.</p>
         <ul class="built">
           <li><strong>Four-tap booking</strong> right on the home page: what needs fixing, a time, and how to reach you.</li>
           <li><strong>108 pages:</strong> every service and town page at the same address as today, plus reviews, offers, FAQ, team, careers and the blog carried over.</li>
@@ -573,21 +523,34 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </div>
     </div>
     </details>
+      </div>
+      <div class="pv" data-site="pre" data-name="Prestige Plumbing Werks" data-pages="[{&quot;p&quot;: &quot;Home&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/PRESTIGE/&quot;, &quot;k&quot;: &quot;prestige-home&quot;, &quot;a&quot;: &quot;Prestige Plumbing Werks home: Breathe easy, a booking panel with service, time and contact steps, service list, reviews, the Golden Throne Club and offers&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Services&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/PRESTIGE/plumbing-services/&quot;, &quot;k&quot;: &quot;prestige-services&quot;, &quot;a&quot;: &quot;Prestige services page listing every plumbing service&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Town page&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/PRESTIGE/avon-plumbing-services/&quot;, &quot;k&quot;: &quot;prestige-town&quot;, &quot;a&quot;: &quot;Prestige town page: Plumber in Avon, CT&quot;, &quot;ul&quot;: &quot;&quot;}, {&quot;p&quot;: &quot;Golden Throne Club&quot;, &quot;u&quot;: &quot;https://b0to1q.github.io/PRESTIGE/golden-throne-club/&quot;, &quot;k&quot;: &quot;prestige-club&quot;, &quot;a&quot;: &quot;The Golden Throne Club plumbing membership page with member benefits and questions&quot;, &quot;ul&quot;: &quot;&quot;}]">
+        <div class="pvbar">
+          <div class="pvtabs" role="tablist" aria-label="Prestige Plumbing Werks pages"><button type="button" role="tab" aria-selected="true" data-j="0">Home</button><button type="button" role="tab" aria-selected="false" data-j="1">Services</button><button type="button" role="tab" aria-selected="false" data-j="2">Town page</button><button type="button" role="tab" aria-selected="false" data-j="3">Golden Throne Club</button></div>
+          <div class="pvseg" role="group" aria-label="Preview size"><button type="button" data-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-mode="phone" aria-pressed="false">Phone</button></div>
+        </div>
+        <div class="pvf">
+          <div class="bar"><i></i><i></i><i></i><span class="pvurl">b0to1q.github.io/PRESTIGE/</span></div>
+          <div class="pvs" style="--pv-bg:#fff;--pv-poster:url(img/v3/t-prestige-home.webp?v=9)"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="case shk" id="dealership-tools" aria-labelledby="shk-h">
   <div class="wrap">
-    <div class="hd">
-      <div><p class="kind">Car dealership · Custom tools</p><h2 id="shk-h">Scan to Drive &amp; Lot Map</h2></div>
-      <div class="acts"><span class="tag">In testing</span><button class="open" type="button" data-open="20">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button></div>
-    </div>
-    <p class="lead"><span class="phr">Scan a car on the lot,</span> <span class="phr">and it lights up on the map.</span></p>
-    <details class="wu">
+    <div class="cx">
+      <div class="cinfo">
+        <span class="st st-test">In testing</span>
+        <p class="kind">Car dealership · Custom tools</p><h2 id="shk-h">Scan to Drive &amp; Lot Map</h2>
+        <p class="lead"><span class="phr">Scan a car on the lot,</span> <span class="phr">and it lights up on the map.</span></p>
+        <p class="sum">Two connected tools built for Shaker’s Family Ford in Watertown, to make buying a car faster for shoppers and easier for the people selling them.</p>
+        
+        <details class="wu">
       <summary><span class="wo">Read about this project</span><span class="wc">Show less</span></summary>
     <div class="cgrid">
       <div class="copy">
-        <p>Two connected tools built for Shaker’s Family Ford in Watertown, to make buying a car faster for shoppers and easier for the people selling them.</p>
         <ul class="built">
           <li><strong>Scan to Drive:</strong> a QR code on every car. Shoppers see the car, estimate a payment, send trade photos, get their paperwork ready and ask for a test drive, or just type the stock number.</li>
           <li><strong>Floor Console:</strong> every shopper shows up live for sales, the used car manager and finance, with a checklist, messages, and QR stickers printed straight from the console.</li>
@@ -607,6 +570,18 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       </div>
     </div>
     </details>
+      </div>
+      <div class="pv" data-site="shk" data-name="Shaker&#x27;s dealership tools" data-pages="[{&quot;p&quot;: &quot;Customer page&quot;, &quot;u&quot;: &quot;&quot;, &quot;k&quot;: &quot;shakers-car&quot;, &quot;a&quot;: &quot;Scan to Drive customer page for a demo 2021 Ford Explorer: payment estimate, trade value, paperwork and a test-drive button&quot;, &quot;ul&quot;: &quot;Scan to Drive \u00b7 what a shopper sees after scanning a car (demo data)&quot;}, {&quot;p&quot;: &quot;Floor console&quot;, &quot;u&quot;: &quot;&quot;, &quot;k&quot;: &quot;shakers-console&quot;, &quot;a&quot;: &quot;Floor Console showing a live demo shopper with a checklist, messages and Claim this shopper&quot;, &quot;ul&quot;: &quot;Scan to Drive \u00b7 Floor Console for sales staff (demo data)&quot;}, {&quot;p&quot;: &quot;QR codes&quot;, &quot;u&quot;: &quot;&quot;, &quot;k&quot;: &quot;shakers-qr&quot;, &quot;a&quot;: &quot;Console tab to add cars, paste many at once and print QR stickers for each&quot;, &quot;ul&quot;: &quot;Scan to Drive \u00b7 add cars and print QR stickers (demo data)&quot;}, {&quot;p&quot;: &quot;Lot map&quot;, &quot;u&quot;: &quot;&quot;, &quot;k&quot;: &quot;shakers-lot&quot;, &quot;a&quot;: &quot;Lot map of the dealership with a search box; a demo car being looked at right now is lit up on the map&quot;, &quot;ul&quot;: &quot;Shaker&#x27;s Lot Map \u00b7 find any car by stock number (demo data)&quot;}]">
+        <div class="pvbar">
+          <div class="pvtabs" role="tablist" aria-label="Shaker&#x27;s dealership tools pages"><button type="button" role="tab" aria-selected="true" data-j="0">Customer page</button><button type="button" role="tab" aria-selected="false" data-j="1">Floor console</button><button type="button" role="tab" aria-selected="false" data-j="2">QR codes</button><button type="button" role="tab" aria-selected="false" data-j="3">Lot map</button></div>
+          <div class="pvseg" role="group" aria-label="Preview size"><button type="button" data-mode="desktop" aria-pressed="true">Desktop</button><button type="button" data-mode="phone" aria-pressed="false">Phone</button></div>
+        </div>
+        <div class="pvf">
+          <div class="bar"><i></i><i></i><i></i><span class="pvurl">Scan to Drive · what a shopper sees after scanning a car (demo data)</span></div>
+          <div class="pvs" style="--pv-bg:#121820;--pv-poster:url(img/v3/t-shakers-car.webp?v=9)"></div>
+        </div><p class="pvnote">Demo data. These are staff tools, so there’s no public link.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -654,122 +629,70 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <footer><div class="wrap"><span><strong style="font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacing:-.035em;color:var(--ink)">Brand by G<span class="dot">.</span></strong> · Built right. Owned by you.</span><span>© 2026 George Blanchard Jr.</span></div></footer>
 <script>
 {
-  const ITEMS = [{"s": "haf", "p": "Home", "k": "hafele-home", "u": "https://hafelelandscaping.com/", "a": "Hafele home page: hero with a seasonal estimate request, quick facts, six services with job photos, customer reviews, the Four-Season Care band, service area, Verse of the Day and footer"}, {"s": "haf", "p": "Services", "k": "hafele-services", "u": "https://hafelelandscaping.com/services.html", "a": "Hafele services page: Four-Season Care, then six services with job photos and estimate buttons, then common questions"}, {"s": "haf", "p": "Blog", "k": "hafele-blog", "u": "https://hafelelandscaping.com/blog/", "a": "Hafele blog: Lawn & Snow Advice for Connecticut Homes, with six seasonal how-to posts"}, {"s": "haf", "p": "Blog post", "k": "hafele-post", "u": "https://hafelelandscaping.com/blog/fall-lawn-care-connecticut/", "a": "Hafele blog post: How to Get Your Lawn Ready for a Connecticut Winter, a seven-step checklist"}, {"s": "haf", "p": "Service areas", "k": "hafele-areas", "u": "https://hafelelandscaping.com/service-areas/", "a": "Hafele service areas hub: lawn care and snow removal across 15 Connecticut towns"}, {"s": "haf", "p": "Town page", "k": "hafele-town", "u": "https://hafelelandscaping.com/service-areas/burlington-ct/", "a": "Hafele town page: Lawn Care & Snow Removal in Burlington, CT, with local property notes and common questions"}, {"s": "haf", "p": "About & contact", "k": "hafele-about", "u": "https://hafelelandscaping.com/about.html", "a": "Hafele about and contact page"}, {"s": "dani", "p": "Home", "k": "dani-home", "u": "https://b0to1q.github.io/DANIHAMM/", "a": "Dani Hamm home page: name over a misty hero, three full-screen scenes, then the filterable portfolio", "g": "dani"}, {"s": "dani", "p": "Shop", "k": "dani-shop", "u": "https://b0to1q.github.io/DANIHAMM/shop.html", "a": "Dani Hamm shop: prints and goods, eight products", "g": "dani"}, {"s": "dani", "p": "Product", "k": "dani-product", "u": "https://b0to1q.github.io/DANIHAMM/product.html?item=mug", "a": "Dani Hamm product page for a mug: pick the photo, options and quantity", "g": "dani"}, {"s": "dani", "p": "About", "k": "dani-about", "u": "https://b0to1q.github.io/DANIHAMM/about.html", "a": "Dani Hamm about page", "g": "dani"}, {"s": "dani", "p": "Contact", "k": "dani-contact", "u": "https://b0to1q.github.io/DANIHAMM/contact.html", "a": "Dani Hamm contact page with an inquiry form", "g": "dani"}, {"s": "rei", "p": "Home", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/", "a": "Reillo home: animated REILLO wordmark over a light-leak background, service tickers and the package builder below", "yd": 0, "ym": 0}, {"s": "rei", "p": "Package builder", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#builder", "a": "Reillo package builder: choose vehicle size, services and add-ons with live pricing and time on site", "yd": 0.1898, "ym": 0.1446}, {"s": "rei", "p": "Membership", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#club", "a": "The Reillo Club: three monthly membership plans", "yd": 0.6098, "ym": 0.5282}, {"s": "rei", "p": "Booking", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#book", "a": "Reillo booking request form with arrival windows", "yd": 0.8403, "ym": 0.776}, {"s": "pre", "p": "Home", "k": "prestige-home", "u": "https://b0to1q.github.io/PRESTIGE/", "a": "Prestige Plumbing Werks home: Breathe easy, a booking panel with service, time and contact steps, service list, reviews, the Golden Throne Club and offers"}, {"s": "pre", "p": "Services", "k": "prestige-services", "u": "https://b0to1q.github.io/PRESTIGE/plumbing-services/", "a": "Prestige services page listing every plumbing service"}, {"s": "pre", "p": "Town page", "k": "prestige-town", "u": "https://b0to1q.github.io/PRESTIGE/avon-plumbing-services/", "a": "Prestige town page: Plumber in Avon, CT"}, {"s": "pre", "p": "Golden Throne Club", "k": "prestige-club", "u": "https://b0to1q.github.io/PRESTIGE/golden-throne-club/", "a": "The Golden Throne Club plumbing membership page with member benefits and questions"}, {"s": "shk", "p": "Customer page", "cl": "Scan to Drive", "k": "shakers-car", "u": "", "ul": "Scan to Drive · what a shopper sees after scanning a car (demo data)", "a": "Scan to Drive customer page for a demo 2021 Ford Explorer: payment estimate, trade value, paperwork and a test-drive button"}, {"s": "shk", "p": "Floor console", "cl": "Scan to Drive", "k": "shakers-console", "u": "", "ul": "Scan to Drive · Floor Console for sales staff (demo data)", "a": "Floor Console showing a live demo shopper with a checklist, messages and Claim this shopper"}, {"s": "shk", "p": "QR codes", "cl": "Scan to Drive", "k": "shakers-qr", "u": "", "ul": "Scan to Drive · add cars and print QR stickers (demo data)", "a": "Console tab to add cars, paste many at once and print QR stickers for each"}, {"s": "shk", "p": "Lot map", "cl": "Shaker's Lot Map", "k": "shakers-lot", "u": "", "ul": "Shaker's Lot Map · find any car by stock number (demo data)", "a": "Lot map of the dealership with a search box; a demo car being looked at right now is lit up on the map"}];
-  const SITES = {"haf": {"name": "Hafele Landscaping", "tag": "Live client site", "live": "https://hafelelandscaping.com/", "bg": "#1D3326", "ink": "#F6F2E6", "acc": "#CBB373", "rule": "#38533F", "soft": "#C9CFBF"}, "dani": {"name": "Dani Hamm", "tag": "Concept", "live": "https://b0to1q.github.io/DANIHAMM/", "bg": "#121A1D", "ink": "#E9EEF0", "acc": "#8FB1B8", "rule": "#2A3639", "soft": "#A3B1B5"}, "rei": {"name": "Reillo Private Detail", "tag": "In progress", "live": "https://b0to1q.github.io/REILLO/", "bg": "#0A0B0D", "ink": "#F3F3F1", "acc": "#FF3D2E", "rule": "#262A31", "soft": "#A3A7AE"}, "pre": {"name": "Prestige Plumbing Werks", "tag": "Redesign concept", "live": "https://b0to1q.github.io/PRESTIGE/", "bg": "#5A0A0C", "ink": "#F5F0EB", "acc": "#D4AE7E", "rule": "#7E2A2C", "soft": "#E2CFC6"}, "shk": {"name": "Shaker's dealership tools", "tag": "In testing", "live": "", "bg": "#121820", "ink": "#EEF1F4", "acc": "#C9A45C", "rule": "#2A3340", "soft": "#A6B0BC"}};
-  const $ = id => document.getElementById(id);
-  const zoom = $('zoom'), frame = $('zframe'), vp = $('zvp'), img = $('zimg'), tabs = $('ztabs'), dots = $('zdots');
-  const tiles = [...document.querySelectorAll('.tile')];
-  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
-  let cur = -1, mode = matchMedia('(max-width: 700px)').matches ? 'phone' : 'desktop', pushed = false, opener = null;
+  // Live previews: each project shows the real site in a frame, scaled to fit.
+  const narrow = matchMedia('(max-width: 900px)').matches;
+  const touch = matchMedia('(hover: none) and (pointer: coarse)').matches;
+  const LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+  const mapUrl = u => !LOCAL ? u : u.replace('https://hafelelandscaping.com/', 'http://localhost:8765/').replace('https://b0to1q.github.io/', 'http://localhost:8766/');
 
-  // hover-scroll distance for each tile
-  const measure = t => {
-    const im = t.querySelector('img'), box = t.querySelector('.shot');
-    const s = Math.max(0, im.offsetHeight - box.clientHeight);
-    t.style.setProperty('--s', s + 'px'); t.style.setProperty('--d', Math.min(9, Math.max(1.5, s / 260)) + 's');
-  };
-  tiles.forEach(t => { const im = t.querySelector('img'); if (im.complete) measure(t); else im.addEventListener('load', () => measure(t)); });
-  const ro = new ResizeObserver(() => tiles.forEach(measure)); document.querySelectorAll('.grid').forEach(g => ro.observe(g));
+  document.querySelectorAll('.pv').forEach(pv => {
+    const pages = JSON.parse(pv.dataset.pages), name = pv.dataset.name;
+    const f = pv.querySelector('.pvf'), scr = pv.querySelector('.pvs'), url = pv.querySelector('.pvurl');
+    const tabs = [...pv.querySelectorAll('.pvtabs button')], segs = [...pv.querySelectorAll('.pvseg button')];
+    const isTool = !pages[0].u;
+    let cur = 0, mode = narrow ? 'phone' : 'desktop', started = false, ifr = null, box = null, tap = null, done = null;
 
-  const paint = it => {
-    const sz = mode === 'phone' ? 'm' : 'd';
-    const src = 'img/v3/' + sz + '-' + it.k + '.webp?v=7';
-    vp.style.backgroundImage = it.g ? `url(img/v3/bg-${it.g}-${sz}.webp?v=7)` : 'none';
-    vp.style.backgroundColor = it.g ? '#0B1416' : (it.s === 'rei' ? '#0A0B0D' : '#fff');
-    const y = (mode === 'phone' ? it.ym : it.yd) || 0;
-    const go = () => { vp.scrollTop = Math.round(y * img.offsetHeight); };
-    if (img.getAttribute('src') !== src) { vp.scrollTop = 0; img.src = src; if (y) img.addEventListener('load', go, {once: true}); }
-    else go();
-  };
-  const setMode = m => {
-    mode = m;
-    zoom.querySelectorAll('.seg button').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m ? 'true' : 'false'));
-    frame.classList.toggle('phone', m === 'phone');
-    if (cur > -1) { paint(ITEMS[cur]); }
-  };
-
-  const show = (i, dir) => {
-    cur = (i + ITEMS.length) % ITEMS.length;
-    const it = ITEMS[cur], st = SITES[it.s];
-    for (const [k, v] of Object.entries({bg: st.bg, ink: st.ink, acc: st.acc, rule: st.rule, soft: st.soft})) zoom.style.setProperty('--z-' + k, v);
-    $('zname').textContent = st.name;
-    $('zmeta').textContent = st.tag + ' · ' + it.p + ' · ' + (cur + 1) + ' of ' + ITEMS.length;
-    $('zurl').textContent = it.u ? it.u.replace('https://', '') : (it.ul || '');
-    if (it.u) { $('zlive').href = it.u; $('zlive').hidden = false; } else { $('zlive').hidden = true; }
-    img.alt = it.a;
-    paint(it);
-    tabs.innerHTML = ITEMS.map((x, j) => x.s === it.s ? `<button type="button" role="tab" data-j="${j}" aria-selected="${j === cur}">${x.p.replace('&', '&amp;')}</button>` : '').join('');
-    tabs.querySelector('[aria-selected=true]')?.scrollIntoView({block: 'nearest', inline: 'nearest'});
-    dots.innerHTML = ITEMS.map((x, j) => `<i class="${j === cur ? 'on' : ''}"></i>`).join('');
-    if (dir) { frame.classList.remove('slide-l', 'slide-r'); void frame.offsetWidth; frame.classList.add(dir > 0 ? 'slide-l' : 'slide-r'); }
-    [cur - 1, cur + 1].forEach(j => { const x = ITEMS[(j + ITEMS.length) % ITEMS.length]; new Image().src = 'img/v3/' + (mode === 'phone' ? 'm-' : 'd-') + x.k + '.webp?v=7'; });
-  };
-
-  const rectClip = r => `inset(${r.top}px ${innerWidth - r.right}px ${innerHeight - r.bottom}px ${r.left}px round 14px)`;
-  const visible = r => r.bottom > 0 && r.top < innerHeight && r.width > 0;
-
-  const open = (i, from) => {
-    opener = from || tiles[i];
-    show(i);
+    const fit = () => {
+      if (!ifr) return;
+      const W = mode === 'phone' ? 390 : 1280, s = scr.clientWidth / W;
+      ifr.style.width = W + 'px'; ifr.style.height = Math.ceil(scr.clientHeight / s) + 'px';
+      ifr.style.transform = `scale(${s})`;
+    };
+    const lock = on => { if (!tap) return; tap.hidden = !on; done.hidden = on; ifr.style.pointerEvents = on ? 'none' : ''; };
+    const load = () => {
+      const pg = pages[cur];
+      url.textContent = pg.u ? pg.u.replace('https://', '') : pg.ul;
+      if (isTool) {
+        if (!box) { box = document.createElement('div'); box.className = 'pvimg'; box.tabIndex = 0; box.innerHTML = '<img alt="">'; scr.appendChild(box); }
+        const im = box.querySelector('img');
+        im.src = 'img/v3/' + (mode === 'phone' ? 'm-' : 'd-') + pg.k + '.webp?v=7';
+        im.alt = pg.a; box.setAttribute('aria-label', name + ', ' + pg.p + '. Scrollable screenshot.'); box.scrollTop = 0;
+        return;
+      }
+      if (!ifr) {
+        ifr = document.createElement('iframe');
+        ifr.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox');
+        ifr.setAttribute('referrerpolicy', 'no-referrer');
+        ifr.addEventListener('load', () => ifr.classList.add('on'));
+        scr.appendChild(ifr);
+        if (touch) {
+          tap = document.createElement('button'); tap.type = 'button'; tap.className = 'pvtap';
+          tap.innerHTML = '<span>Tap to scroll the live site</span>';
+          done = document.createElement('button'); done.type = 'button'; done.className = 'pvdone'; done.textContent = 'Done';
+          tap.addEventListener('click', () => lock(false)); done.addEventListener('click', () => lock(true));
+          scr.append(tap, done); lock(true);
+        }
+        new ResizeObserver(fit).observe(scr);
+      }
+      ifr.classList.remove('on');
+      ifr.title = 'Live preview of ' + name + ', ' + pg.p;
+      ifr.src = mapUrl(pg.u);
+      fit();
+    };
+    const setMode = m => {
+      mode = m; f.classList.toggle('phone', m === 'phone');
+      segs.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m ? 'true' : 'false'));
+      if (!started) return;
+      if (isTool) load(); else fit();
+    };
+    tabs.forEach(b => b.addEventListener('click', () => {
+      cur = +b.dataset.j; tabs.forEach(t => t.setAttribute('aria-selected', t === b ? 'true' : 'false'));
+      if (started) load();
+    }));
+    segs.forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
     setMode(mode);
-    zoom.hidden = false;
-    document.documentElement.style.overflow = 'hidden';
-    const r = (tiles[i] && visible(tiles[i].getBoundingClientRect()) && from && from.classList.contains('tile')) ? tiles[i].getBoundingClientRect() : null;
-    if (!reduce.matches && r) {
-      zoom.animate([{clipPath: rectClip(r)}, {clipPath: 'inset(0 0 0 0 round 0px)'}], {duration: 420, easing: 'cubic-bezier(.2,.8,.2,1)'});
-      zoom.querySelector('.zin').animate([{opacity: 0, transform: 'scale(.985)'}, {opacity: 1, transform: 'none'}], {duration: 360, delay: 120, easing: 'ease-out', fill: 'backwards'});
-    } else {
-      zoom.animate([{opacity: 0}, {opacity: 1}], {duration: reduce.matches ? 150 : 220});
-    }
-    try { history.pushState({bbgZoom: 1}, '', '#preview'); pushed = true; } catch (e) { pushed = false; }
-    $('zclose').focus();
-  };
-
-  const close = () => {
-    if (zoom.hidden) return;
-    const t = tiles[cur], r = t && t.getBoundingClientRect();
-    const done = () => { zoom.hidden = true; document.documentElement.style.overflow = ''; (t || opener)?.focus({preventScroll: true}); };
-    if (!reduce.matches && r && visible(r)) {
-      const a = zoom.animate([{clipPath: 'inset(0 0 0 0 round 0px)'}, {clipPath: rectClip(r)}], {duration: 340, easing: 'cubic-bezier(.4,0,.2,1)'});
-      zoom.querySelector('.zin').animate([{opacity: 1}, {opacity: 0}], {duration: 200, fill: 'forwards'});
-      a.onfinish = () => { done(); zoom.querySelector('.zin').getAnimations().forEach(x => x.cancel()); };
-    } else {
-      const a = zoom.animate([{opacity: 1}, {opacity: 0}], {duration: 180}); a.onfinish = done;
-    }
-  };
-  const requestClose = () => { if (pushed) { pushed = false; history.back(); } else close(); };
-  addEventListener('popstate', () => { pushed = false; close(); });
-
-  tiles.forEach(t => t.addEventListener('click', () => open(+t.dataset.i, t)));
-  document.querySelectorAll('[data-open]').forEach(b => b.addEventListener('click', () => open(+b.dataset.open, b)));
-  $('zclose').addEventListener('click', requestClose);
-  $('zprev').addEventListener('click', () => show(cur - 1, -1));
-  $('znext').addEventListener('click', () => show(cur + 1, 1));
-  zoom.querySelectorAll('.seg button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
-  tabs.addEventListener('click', e => { const b = e.target.closest('button'); if (b) { const j = +b.dataset.j; show(j, j > cur ? 1 : -1); } });
-
-  zoom.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { e.preventDefault(); requestClose(); }
-    else if (e.key === 'ArrowRight' && !e.target.closest('.seg')) { e.preventDefault(); show(cur + 1, 1); }
-    else if (e.key === 'ArrowLeft' && !e.target.closest('.seg')) { e.preventDefault(); show(cur - 1, -1); }
-    else if (e.key === 'Tab') {
-      const f = [...zoom.querySelectorAll('button, a[href], [tabindex="0"]')].filter(x => x.offsetParent !== null);
-      if (!f.length) return;
-      if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
-      else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
-    }
+    new IntersectionObserver((es, io) => { if (es.some(e => e.isIntersecting)) { io.disconnect(); started = true; load(); } }, {rootMargin: '300px 0px'}).observe(pv);
   });
-
-  let sx = 0, sy = 0, tracking = false;
-  const stage = $('zstage');
-  stage.addEventListener('touchstart', e => { const t = e.touches[0]; sx = t.clientX; sy = t.clientY; tracking = e.touches.length === 1; }, {passive: true});
-  stage.addEventListener('touchend', e => {
-    if (!tracking) return; tracking = false;
-    const t = e.changedTouches[0], dx = t.clientX - sx, dy = t.clientY - sy;
-    if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.8) show(cur + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
-  }, {passive: true});
-
-  if (location.hash === '#preview') { try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {} }
 }
 </script>
 <script>
