@@ -24,7 +24,7 @@
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" href="fonts/archivo.woff2?v=2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter.woff2?v=2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="img/v3/hero-hafele.webp?v=1" as="image" fetchpriority="high">
+<link rel="preload" as="image" fetchpriority="high" href="img/v3/hero-hafele.webp?v=1" imagesrcset="img/v3/hero-hafele-480.webp?v=1 480w, img/v3/hero-hafele-700.webp?v=1 700w, img/v3/hero-hafele.webp?v=1 1200w" imagesizes="(max-width:600px) 92vw, min(62vw, 660px)">
 <style>
 @font-face{font-family:Archivo;src:url(fonts/archivo.woff2?v=2) format("woff2");font-weight:400 900;font-stretch:100% 125%;font-display:swap}
 @font-face{font-family:Inter;src:url(fonts/inter.woff2?v=2) format("woff2");font-weight:400 600;font-display:swap}
@@ -350,8 +350,8 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <p class="where">George Blanchard Jr. · Plantsville, Connecticut</p>
     </div>
     <div class="stage" aria-hidden="true">
-      <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/v3/hero-hafele.webp?v=1" alt="" width="1200" height="750" fetchpriority="high"></div>
-      <div class="br s2"><div class="bar"><i></i><i></i><i></i><span>Dani Hamm — Prints &amp; goods</span></div><img src="img/v3/hero-dani.webp?v=1" alt="" width="1200" height="750"></div>
+      <div class="br s1"><div class="bar"><i></i><i></i><i></i><span>Hafele Landscaping &amp; Snow Removal</span></div><img src="img/v3/hero-hafele.webp?v=1" srcset="img/v3/hero-hafele-480.webp?v=1 480w, img/v3/hero-hafele-700.webp?v=1 700w, img/v3/hero-hafele.webp?v=1 1200w" sizes="(max-width:600px) 92vw, min(62vw, 660px)" alt="" width="1200" height="750" fetchpriority="high"></div>
+      <div class="br s2"><div class="bar"><i></i><i></i><i></i><span>Dani Hamm — Prints &amp; goods</span></div><img src="img/v3/hero-dani.webp?v=1" srcset="img/v3/hero-dani-480.webp?v=1 480w, img/v3/hero-dani-700.webp?v=1 700w, img/v3/hero-dani.webp?v=1 1200w" sizes="(max-width:600px) 80vw, min(50vw, 560px)" alt="" width="1200" height="750"></div>
       <div class="ph s3"><img src="img/v3/hero-phone.webp?v=1" alt="" width="360" height="738"></div>
     </div>
   </div>
@@ -430,9 +430,14 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <script>
 {
   const tiles = [...document.querySelectorAll('.tile')];
-  const measure = t => { const im = t.querySelector('img'), box = t.querySelector('.shot'); const s = Math.max(0, im.offsetHeight - box.clientHeight); t.style.setProperty('--s', s + 'px'); t.style.setProperty('--d', Math.min(9, Math.max(1.5, s / 260)) + 's'); };
-  tiles.forEach(t => { const im = t.querySelector('img'); if (im.complete) measure(t); else im.addEventListener('load', () => measure(t)); });
-  const g = document.querySelector('.pgrid'); if (g) new ResizeObserver(() => tiles.forEach(measure)).observe(g);
+  /* read every size first, then write, so the browser lays out once */
+  const measureAll = () => requestAnimationFrame(() => {
+    const ss = tiles.map(t => Math.max(0, t.querySelector('img').offsetHeight - t.querySelector('.shot').clientHeight));
+    tiles.forEach((t, i) => { t.style.setProperty('--s', ss[i] + 'px'); t.style.setProperty('--d', Math.min(9, Math.max(1.5, ss[i] / 260)) + 's'); });
+  });
+  tiles.forEach(t => { const im = t.querySelector('img'); if (!im.complete) im.addEventListener('load', measureAll); });
+  measureAll();
+  const g = document.querySelector('.pgrid'); if (g) new ResizeObserver(measureAll).observe(g);
 }
 </script>
 <script>
@@ -495,9 +500,10 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
     if (t.matches('.ofacts')) t.querySelectorAll('b').forEach((b, i) => count(b, 150 + i * 110));
   }), {rootMargin: '0px 0px -12% 0px'});
   els.forEach(el => io.observe(el));
-  const hero = document.querySelector('.hero'); let q = 0;
-  const upd = () => { q = 0; const h = hero.offsetHeight || 1; R.style.setProperty('--hp', Math.max(0, Math.min(1, scrollY / h)).toFixed(4)); };
-  addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(upd); }, {passive: true}); upd();
+  const hero = document.querySelector('.hero'); let q = 0, h = 1;
+  new ResizeObserver(es => { h = es[0].contentRect.height || 1; }).observe(hero);
+  const upd = () => { q = 0; R.style.setProperty('--hp', Math.max(0, Math.min(1, scrollY / h)).toFixed(4)); };
+  addEventListener('scroll', () => { if (!q) q = requestAnimationFrame(upd); }, {passive: true}); q = requestAnimationFrame(upd);
 })();
 </script>
 </body>
