@@ -244,6 +244,15 @@ footer{border-top:1px solid var(--rule);padding:24px 0;font-size:14px;color:var(
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4px}
 /* home teasers */
+.tile .shot{position:relative}
+.st{position:absolute;left:8px;top:8px;z-index:1;display:inline-flex;align-items:center;gap:6px;background:rgba(14,16,14,.86);color:#fff;font-size:12px;font-weight:600;line-height:1;padding:6px 9px 6px 8px;border-radius:99px;pointer-events:none}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sc)}
+.st-live{--sc:#3FBF6F}.st-prog{--sc:#F2B33D}.st-concept{--sc:#B8C0CA}.st-test{--sc:#5AA9F0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 0;padding:0;list-style:none;font-size:14px;color:var(--soft)}
+.legend li{display:inline-flex;align-items:center;gap:7px}
+.legend li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sc)}
+.legend b{color:var(--ink);font-weight:600}
+
 .hsec{padding:clamp(56px,8vw,104px) 0}
 .hsec h2{font-size:clamp(30px,4.2vw,48px)}
 .hsec .sub{color:var(--soft);font-size:17px;margin:12px 0 0;max-width:60ch}
@@ -309,17 +318,17 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <section class="hsec" aria-labelledby="recent-h">
   <div class="wrap">
     <div class="hhead">
-      <div><h2 id="recent-h">Recent work</h2><p class="sub">Real sites for real businesses. Every page can be opened full size on the Work page.</p></div>
+      <div><h2 id="recent-h">Recent work</h2><p class="sub">A live client site, one in progress and a concept. Every page can be opened full size on the Work page.</p></div>
       <a class="more" href="work.html">See all work</a>
     </div>
     <div class="pgrid">
       <a class="tile" href="work.html#hafele" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373">
         <span class="shot"><img src="img/v3/t-hafele-home.webp?v=7" alt="" loading="lazy"><span class="badge">Scores 97+ on Google's speed test</span></span>
-        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Client build</span></span>
+        <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Live</span></span>
       </a>
       <a class="tile" href="work.html#dani-hamm" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8">
         <span class="shot bgdani"><img src="img/v3/t-dani-home.webp?v=7" alt="" loading="lazy"></span>
-        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Spec concept</span></span>
+        <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Concept</span></span>
       </a>
       <a class="tile" href="work.html#reillo" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E">
         <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-top.webp?v=7" alt="" loading="lazy"></span>

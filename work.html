@@ -83,6 +83,15 @@ h1,h2,h3{font-family:var(--disp);font-weight:900;font-stretch:125%;letter-spacin
 .stage .br,.stage .ph{position:relative;inset:auto;width:100%}.stage .ph{display:none}.s2{width:86%!important;margin-left:auto;margin-top:-18%}}
 
 /* work grid */
+.tile .shot{position:relative}
+.st{position:absolute;left:8px;top:8px;z-index:1;display:inline-flex;align-items:center;gap:6px;background:rgba(14,16,14,.86);color:#fff;font-size:12px;font-weight:600;line-height:1;padding:6px 9px 6px 8px;border-radius:99px;pointer-events:none}
+.st::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--sc)}
+.st-live{--sc:#3FBF6F}.st-prog{--sc:#F2B33D}.st-concept{--sc:#B8C0CA}.st-test{--sc:#5AA9F0}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 0;padding:0;list-style:none;font-size:14px;color:var(--soft)}
+.legend li{display:inline-flex;align-items:center;gap:7px}
+.legend li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--sc)}
+.legend b{color:var(--ink);font-weight:600}
+
 .work .gh{font-size:clamp(24px,3vw,34px);margin-top:clamp(48px,6vw,72px)}
 .work{padding:clamp(56px,8vw,104px) 0 clamp(40px,6vw,72px)}
 .work .sub{color:var(--soft);font-size:17px;margin:12px 0 0;max-width:60ch}
@@ -296,106 +305,112 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <section class="work" id="work" aria-labelledby="work-h">
   <div class="wrap">
     <h1 id="work-h" style="font-size:clamp(36px,5.4vw,64px)">Work<span class="dot">.</span></h1>
-    <p class="sub">Four sites, twenty views. Tap one to open it full size and scroll through it.</p>
+    <p class="sub">Live client sites, work in progress and concepts, each one labeled. Tap any page to open it full size and scroll through it.</p>
+    <ul class="legend" aria-label="What the labels mean">
+      <li class="st-live"><span><b>Live</b> · running for a real business</span></li>
+      <li class="st-prog"><span><b>In progress</b> · being built now</span></li>
+      <li class="st-concept"><span><b>Concept</b> · a design idea, not the business's real site</span></li>
+      <li class="st-test"><span><b>In testing</b> · built, being tried out</span></li>
+    </ul>
     <div class="grid">
       <button class="tile" type="button" data-i="0" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Home">
-        <span class="shot"><img src="img/v3/t-hafele-home.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-home.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="1" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Services">
-        <span class="shot"><img src="img/v3/t-hafele-services.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-services.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Services</span></span>
       </button>
       <button class="tile" type="button" data-i="2" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Blog">
-        <span class="shot"><img src="img/v3/t-hafele-blog.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-blog.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Blog</span></span>
       </button>
       <button class="tile" type="button" data-i="3" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Blog post">
-        <span class="shot"><img src="img/v3/t-hafele-post.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-post.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Blog post</span></span>
       </button>
       <button class="tile" type="button" data-i="4" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Service areas">
-        <span class="shot"><img src="img/v3/t-hafele-areas.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-areas.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Service areas</span></span>
       </button>
       <button class="tile" type="button" data-i="5" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, Town page">
-        <span class="shot"><img src="img/v3/t-hafele-town.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-town.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">Town page</span></span>
       </button>
       <button class="tile" type="button" data-i="6" style="--t-bg:#1D3326;--t-ink:#F6F2E6;--t-acc:#CBB373" aria-label="Open Hafele Landscaping, About &amp; contact">
-        <span class="shot"><img src="img/v3/t-hafele-about.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-live">Live</span><img src="img/v3/t-hafele-about.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Hafele Landscaping</span><span class="pg">About &amp; contact</span></span>
       </button>
       <button class="tile" type="button" data-i="7" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Home">
-        <span class="shot bgdani"><img src="img/v3/t-dani-home.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-home.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="8" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Shop">
-        <span class="shot bgdani"><img src="img/v3/t-dani-shop.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-shop.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Shop</span></span>
       </button>
       <button class="tile" type="button" data-i="9" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Product">
-        <span class="shot bgdani"><img src="img/v3/t-dani-product.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-product.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Product</span></span>
       </button>
       <button class="tile" type="button" data-i="10" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, About">
-        <span class="shot bgdani"><img src="img/v3/t-dani-about.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-about.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">About</span></span>
       </button>
       <button class="tile" type="button" data-i="11" style="--t-bg:#121A1D;--t-ink:#E9EEF0;--t-acc:#8FB1B8" aria-label="Open Dani Hamm, Contact">
-        <span class="shot bgdani"><img src="img/v3/t-dani-contact.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot bgdani"><span class="st st-concept">Concept</span><img src="img/v3/t-dani-contact.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Dani Hamm</span><span class="pg">Contact</span></span>
       </button>
       <button class="tile" type="button" data-i="12" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Home">
-        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-top.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-top.webp?v=7" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="13" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Package builder">
-        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-builder.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-builder.webp?v=7" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Package builder</span></span>
       </button>
       <button class="tile" type="button" data-i="14" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Membership">
-        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-club.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-club.webp?v=7" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Membership</span></span>
       </button>
       <button class="tile" type="button" data-i="15" style="--t-bg:#0A0B0D;--t-ink:#F3F3F1;--t-acc:#FF3D2E" aria-label="Open Reillo Private Detail, Booking">
-        <span class="shot" style="background:#0A0B0D"><img src="img/v3/t-reillo-book.webp?v=7" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#0A0B0D"><span class="st st-prog">In progress</span><img src="img/v3/t-reillo-book.webp?v=7" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Reillo</span><span class="pg">Booking</span></span>
       </button>
       <button class="tile" type="button" data-i="16" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Home">
-        <span class="shot"><img src="img/v3/t-prestige-home.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-home.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Home</span></span>
       </button>
       <button class="tile" type="button" data-i="17" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Services">
-        <span class="shot"><img src="img/v3/t-prestige-services.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-services.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Services</span></span>
       </button>
       <button class="tile" type="button" data-i="18" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Town page">
-        <span class="shot"><img src="img/v3/t-prestige-town.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-town.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Town page</span></span>
       </button>
       <button class="tile" type="button" data-i="19" style="--t-bg:#5A0A0C;--t-ink:#F5F0EB;--t-acc:#D4AE7E" aria-label="Open Prestige Plumbing Werks, Golden Throne Club">
-        <span class="shot"><img src="img/v3/t-prestige-club.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot"><span class="st st-concept">Concept</span><img src="img/v3/t-prestige-club.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Prestige Plumbing</span><span class="pg">Golden Throne Club</span></span>
       </button>
     </div>
     <h2 class="gh" id="tools-h">Tools</h2>
-    <p class="sub">Custom software for a local car dealership, shown with demo data. Tap one to open it.</p>
+    <p class="sub">Custom software for a local car dealership, shown with demo cars. Tap one to open it.</p>
     <div class="grid">
       <button class="tile" type="button" data-i="20" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, Customer page">
-        <span class="shot" style="background:#121820"><img src="img/v3/t-shakers-car.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-car.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">Customer page</span></span>
       </button>
       <button class="tile" type="button" data-i="21" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, Floor console">
-        <span class="shot" style="background:#121820"><img src="img/v3/t-shakers-console.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-console.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">Floor console</span></span>
       </button>
       <button class="tile" type="button" data-i="22" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Scan to Drive, QR codes">
-        <span class="shot" style="background:#121820"><img src="img/v3/t-shakers-qr.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-qr.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Scan to Drive</span><span class="pg">QR codes</span></span>
       </button>
       <button class="tile" type="button" data-i="23" style="--t-bg:#121820;--t-ink:#EEF1F4;--t-acc:#C9A45C" aria-label="Open Shaker&#x27;s Lot Map, Lot map">
-        <span class="shot" style="background:#121820"><img src="img/v3/t-shakers-lot.webp?v=8" alt="" loading="lazy"></span>
+        <span class="shot" style="background:#121820"><span class="st st-test">In testing</span><img src="img/v3/t-shakers-lot.webp?v=8" alt="" loading="lazy"></span>
         <span class="lbl"><span class="cl">Shaker&#x27;s Lot Map</span><span class="pg">Lot map</span></span>
       </button>
     </div>
@@ -406,7 +421,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
   <div class="wrap">
     <div class="hd">
       <div><p class="kind">Client build · Landscaping &amp; snow removal</p><h2 id="haf-h">Hafele Landscaping</h2></div>
-      <div class="acts"><span class="tag">Draft with the owner</span><button class="open" type="button" data-open="0">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+      <div class="acts"><span class="tag">Live</span><button class="open" type="button" data-open="0">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://hafelelandscaping.com/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead"><span class="phr">A site that knows what season it is&nbsp;—</span> <span class="phr">and an estimate in two taps,</span> <span class="phr">from the driveway.</span></p>
     <div class="cgrid">
@@ -442,7 +457,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
   <div class="wrap">
     <div class="hd">
       <div><p class="kind">Spec concept · Wildlife photography</p><h2 id="dani-h">Dani Hamm</h2></div>
-      <div class="acts"><span class="tag">Spec concept</span><button class="open" type="button" data-open="7">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+      <div class="acts"><span class="tag">Concept</span><button class="open" type="button" data-open="7">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/DANIHAMM/" target="_blank" rel="noopener">Visit the live site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead keep"><span class="phr">A gallery that feels like being</span> <span class="phr">out there at first light.</span></p>
     <div class="cgrid">
@@ -508,7 +523,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
   <div class="wrap">
     <div class="hd">
       <div><p class="kind">Plumbing · Burlington, CT</p><h2 id="pre-h">Prestige Plumbing Werks</h2></div>
-      <div class="acts"><span class="tag">Redesign concept</span><button class="open" type="button" data-open="16">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/PRESTIGE/" target="_blank" rel="noopener">Visit the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
+      <div class="acts"><span class="tag">Concept</span><button class="open" type="button" data-open="16">Open the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 2h4v4M6 14H2v-4M14 2 9 7M2 14l5-5"/></svg></button><a class="live" href="https://b0to1q.github.io/PRESTIGE/" target="_blank" rel="noopener">Visit the preview <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12"/></svg></a></div>
     </div>
     <p class="lead"><span class="phr">Breathe easy&nbsp;—</span> <span class="phr">an upscale plumber’s site</span> <span class="phr">with booking in four taps.</span></p>
     <div class="cgrid">
@@ -613,7 +628,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 <script>
 {
   const ITEMS = [{"s": "haf", "p": "Home", "k": "hafele-home", "u": "https://hafelelandscaping.com/", "a": "Hafele home page: hero with a seasonal estimate request, quick facts, six services with job photos, customer reviews, the Four-Season Care band, service area, Verse of the Day and footer"}, {"s": "haf", "p": "Services", "k": "hafele-services", "u": "https://hafelelandscaping.com/services.html", "a": "Hafele services page: Four-Season Care, then six services with job photos and estimate buttons, then common questions"}, {"s": "haf", "p": "Blog", "k": "hafele-blog", "u": "https://hafelelandscaping.com/blog/", "a": "Hafele blog: Lawn & Snow Advice for Connecticut Homes, with six seasonal how-to posts"}, {"s": "haf", "p": "Blog post", "k": "hafele-post", "u": "https://hafelelandscaping.com/blog/fall-lawn-care-connecticut/", "a": "Hafele blog post: How to Get Your Lawn Ready for a Connecticut Winter, a seven-step checklist"}, {"s": "haf", "p": "Service areas", "k": "hafele-areas", "u": "https://hafelelandscaping.com/service-areas/", "a": "Hafele service areas hub: lawn care and snow removal across 15 Connecticut towns"}, {"s": "haf", "p": "Town page", "k": "hafele-town", "u": "https://hafelelandscaping.com/service-areas/burlington-ct/", "a": "Hafele town page: Lawn Care & Snow Removal in Burlington, CT, with local property notes and common questions"}, {"s": "haf", "p": "About & contact", "k": "hafele-about", "u": "https://hafelelandscaping.com/about.html", "a": "Hafele about and contact page"}, {"s": "dani", "p": "Home", "k": "dani-home", "u": "https://b0to1q.github.io/DANIHAMM/", "a": "Dani Hamm home page: name over a misty hero, three full-screen scenes, then the filterable portfolio", "g": "dani"}, {"s": "dani", "p": "Shop", "k": "dani-shop", "u": "https://b0to1q.github.io/DANIHAMM/shop.html", "a": "Dani Hamm shop: prints and goods, eight products", "g": "dani"}, {"s": "dani", "p": "Product", "k": "dani-product", "u": "https://b0to1q.github.io/DANIHAMM/product.html?item=mug", "a": "Dani Hamm product page for a mug: pick the photo, options and quantity", "g": "dani"}, {"s": "dani", "p": "About", "k": "dani-about", "u": "https://b0to1q.github.io/DANIHAMM/about.html", "a": "Dani Hamm about page", "g": "dani"}, {"s": "dani", "p": "Contact", "k": "dani-contact", "u": "https://b0to1q.github.io/DANIHAMM/contact.html", "a": "Dani Hamm contact page with an inquiry form", "g": "dani"}, {"s": "rei", "p": "Home", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/", "a": "Reillo home: animated REILLO wordmark over a light-leak background, service tickers and the package builder below", "yd": 0, "ym": 0}, {"s": "rei", "p": "Package builder", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#builder", "a": "Reillo package builder: choose vehicle size, services and add-ons with live pricing and time on site", "yd": 0.1898, "ym": 0.1446}, {"s": "rei", "p": "Membership", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#club", "a": "The Reillo Club: three monthly membership plans", "yd": 0.6098, "ym": 0.5282}, {"s": "rei", "p": "Booking", "k": "reillo", "u": "https://b0to1q.github.io/REILLO/#book", "a": "Reillo booking request form with arrival windows", "yd": 0.8403, "ym": 0.776}, {"s": "pre", "p": "Home", "k": "prestige-home", "u": "https://b0to1q.github.io/PRESTIGE/", "a": "Prestige Plumbing Werks home: Breathe easy, a booking panel with service, time and contact steps, service list, reviews, the Golden Throne Club and offers"}, {"s": "pre", "p": "Services", "k": "prestige-services", "u": "https://b0to1q.github.io/PRESTIGE/plumbing-services/", "a": "Prestige services page listing every plumbing service"}, {"s": "pre", "p": "Town page", "k": "prestige-town", "u": "https://b0to1q.github.io/PRESTIGE/avon-plumbing-services/", "a": "Prestige town page: Plumber in Avon, CT"}, {"s": "pre", "p": "Golden Throne Club", "k": "prestige-club", "u": "https://b0to1q.github.io/PRESTIGE/golden-throne-club/", "a": "The Golden Throne Club plumbing membership page with member benefits and questions"}, {"s": "shk", "p": "Customer page", "cl": "Scan to Drive", "k": "shakers-car", "u": "", "ul": "Scan to Drive · what a shopper sees after scanning a car (demo data)", "a": "Scan to Drive customer page for a demo 2021 Ford Explorer: payment estimate, trade value, paperwork and a test-drive button"}, {"s": "shk", "p": "Floor console", "cl": "Scan to Drive", "k": "shakers-console", "u": "", "ul": "Scan to Drive · Floor Console for sales staff (demo data)", "a": "Floor Console showing a live demo shopper with a checklist, messages and Claim this shopper"}, {"s": "shk", "p": "QR codes", "cl": "Scan to Drive", "k": "shakers-qr", "u": "", "ul": "Scan to Drive · add cars and print QR stickers (demo data)", "a": "Console tab to add cars, paste many at once and print QR stickers for each"}, {"s": "shk", "p": "Lot map", "cl": "Shaker's Lot Map", "k": "shakers-lot", "u": "", "ul": "Shaker's Lot Map · find any car by stock number (demo data)", "a": "Lot map of the dealership with a search box; a demo car being looked at right now is lit up on the map"}];
-  const SITES = {"haf": {"name": "Hafele Landscaping", "tag": "Client build", "live": "https://hafelelandscaping.com/", "bg": "#1D3326", "ink": "#F6F2E6", "acc": "#CBB373", "rule": "#38533F", "soft": "#C9CFBF"}, "dani": {"name": "Dani Hamm", "tag": "Spec concept", "live": "https://b0to1q.github.io/DANIHAMM/", "bg": "#121A1D", "ink": "#E9EEF0", "acc": "#8FB1B8", "rule": "#2A3639", "soft": "#A3B1B5"}, "rei": {"name": "Reillo Private Detail", "tag": "In progress", "live": "https://b0to1q.github.io/REILLO/", "bg": "#0A0B0D", "ink": "#F3F3F1", "acc": "#FF3D2E", "rule": "#262A31", "soft": "#A3A7AE"}, "pre": {"name": "Prestige Plumbing Werks", "tag": "Redesign concept", "live": "https://b0to1q.github.io/PRESTIGE/", "bg": "#5A0A0C", "ink": "#F5F0EB", "acc": "#D4AE7E", "rule": "#7E2A2C", "soft": "#E2CFC6"}, "shk": {"name": "Shaker's dealership tools", "tag": "Custom tools · In testing", "live": "", "bg": "#121820", "ink": "#EEF1F4", "acc": "#C9A45C", "rule": "#2A3340", "soft": "#A6B0BC"}};
+  const SITES = {"haf": {"name": "Hafele Landscaping", "tag": "Live client site", "live": "https://hafelelandscaping.com/", "bg": "#1D3326", "ink": "#F6F2E6", "acc": "#CBB373", "rule": "#38533F", "soft": "#C9CFBF"}, "dani": {"name": "Dani Hamm", "tag": "Concept", "live": "https://b0to1q.github.io/DANIHAMM/", "bg": "#121A1D", "ink": "#E9EEF0", "acc": "#8FB1B8", "rule": "#2A3639", "soft": "#A3B1B5"}, "rei": {"name": "Reillo Private Detail", "tag": "In progress", "live": "https://b0to1q.github.io/REILLO/", "bg": "#0A0B0D", "ink": "#F3F3F1", "acc": "#FF3D2E", "rule": "#262A31", "soft": "#A3A7AE"}, "pre": {"name": "Prestige Plumbing Werks", "tag": "Redesign concept", "live": "https://b0to1q.github.io/PRESTIGE/", "bg": "#5A0A0C", "ink": "#F5F0EB", "acc": "#D4AE7E", "rule": "#7E2A2C", "soft": "#E2CFC6"}, "shk": {"name": "Shaker's dealership tools", "tag": "In testing", "live": "", "bg": "#121820", "ink": "#EEF1F4", "acc": "#C9A45C", "rule": "#2A3340", "soft": "#A6B0BC"}};
   const $ = id => document.getElementById(id);
   const zoom = $('zoom'), frame = $('zframe'), vp = $('zvp'), img = $('zimg'), tabs = $('ztabs'), dots = $('zdots');
   const tiles = [...document.querySelectorAll('.tile')];
