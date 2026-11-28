@@ -213,8 +213,9 @@ dl.spec a{color:var(--c-acc)}
 .addons{margin-top:clamp(40px,5vw,64px)}
 .addons h3{font-size:clamp(24px,2.6vw,30px)}
 .addons .sub{margin-top:8px}
-.agrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:24px}
+.agrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:24px}
 @media(max-width:900px){.agrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.add .ap small{font-family:var(--text);font-weight:500;font-stretch:100%;letter-spacing:0;font-size:14px;color:var(--soft)}
 @media(max-width:480px){.agrid{grid-template-columns:minmax(0,1fr)}}
 .add{background:var(--bg);border:1px solid var(--rule);border-radius:12px;padding:20px 20px 22px;display:flex;flex-direction:column;gap:8px}
 .add h4{margin:0;font-family:var(--disp);font-weight:800;font-stretch:112%;letter-spacing:-.02em;font-size:19px;line-height:1.15}
@@ -321,11 +322,11 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <p class="step">2 · Be found</p>
         <h3>Be Found</h3>
         <p class="price">$1,500</p>
-        <p class="pnote">Google search &amp; maps · one-time · starting price</p>
-        <p class="pdesc">Puts your site in front of people searching in your towns.</p>
+        <p class="pnote">One-time · starting price</p>
+        <p class="pdesc">Puts you on Google search and maps for people looking in your towns.</p>
         <ul>
-          <li>Pages for the towns you serve</li>
-          <li>How-to blog posts people search for</li>
+          <li>Up to 5 town pages and 3 how-to blog posts</li>
+          <li>More towns or posts at $150 each</li>
           <li>Google Business Profile set up right</li>
           <li>The markup Google reads behind the scenes</li>
         </ul>
@@ -334,10 +335,10 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
         <p class="step">3 · Keep it fresh</p>
         <h3>Care plan</h3>
         <p class="price">$75</p>
-        <p class="pnote">Per month · cancel anytime</p>
+        <p class="pnote">Per month, per site · cancel anytime</p>
         <p class="pdesc">Small updates, like new photos, hours, prices or a changed service, so the site never goes stale.</p>
         <ul>
-          <li>Add monthly content for $300 a month: a couple of new blog posts or town pages</li>
+          <li>Add monthly content for $300 a month: 2 new blog posts or town pages each month</li>
         </ul>
       </div>
     </div>
@@ -357,10 +358,12 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
       <h3>Add-ons</h3>
       <p class="sub">The rest of your brand, so it matches everywhere your name shows up.</p>
       <div class="agrid">
-        <div class="add"><h4>Logo refresh</h4><p class="ap">from $350</p><p>A cleaner, sharper version of the logo you already have, ready for signs, shirts and the web.</p><p class="eg">Done for <strong>Bridge 9 Barber Co.</strong></p></div>
-        <div class="add"><h4>Email signature</h4><p class="ap">$150</p><p>Your logo, name, number and links at the bottom of every email, built to look right in Gmail and Outlook.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
-        <div class="add"><h4>Share &amp; social images</h4><p class="ap">$200</p><p>The picture that shows up when your link is texted or posted, plus profile and cover images that match.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
-        <div class="add"><h4>Domain &amp; Google setup</h4><p class="ap">$200</p><p>Your own .com, connected and secure, with your business details set up so Google can read them.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
+        <div class="add"><h4>Logo refresh</h4><p class="ap">from $350 <small>per logo</small></p><p>A cleaner, sharper version of the logo you already have, ready for signs, shirts and the web.</p><p class="eg">Done for <strong>Bridge 9 Barber Co.</strong></p></div>
+        <div class="add"><h4>Email signature</h4><p class="ap">$150 <small>per design</small></p><p>Your logo, name, number and links at the bottom of every email, built to look right in Gmail and Outlook. Each extra person on your team is $25.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
+        <div class="add"><h4>Share &amp; social images</h4><p class="ap">$200 <small>per set of 3</small></p><p>The picture that shows up when your link is texted or posted, plus a matching profile and cover image. Extra images are $50 each.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
+        <div class="add"><h4>Domain &amp; Google setup</h4><p class="ap">$200 <small>one-time</small></p><p>Your own .com, connected and secure, with your business details set up so Google can read them. The domain itself is yours to pay for, usually yearly.</p><p class="eg">Done for <strong>Hafele</strong></p></div>
+        <div class="add"><h4>Extra blog post or town page</h4><p class="ap">$150 <small>each</small></p><p>One more how-to post or town page, written for your customers and built to show up on Google. Same rate as the monthly content plan.</p><p class="eg">Pairs with <strong>Be Found</strong></p></div>
+        <div class="add"><h4>Google profile update</h4><p class="ap">$75 <small>per update</small></p><p>New photos, services, hours or a seasonal post on your Google Business Profile, so your listing stays as fresh as your site.</p><p class="eg">Included in the <strong>care plan</strong> for small changes</p></div>
       </div>
     </div>
     <p class="fine">Paid ads aren't part of the offer; I'll point you to someone good if you need them. More questions? <a href="faq.html">Read the FAQ</a>.</p>
