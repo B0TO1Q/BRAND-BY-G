@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://b0to1q.github.io/BRAND-BY-G/sitemap.xml

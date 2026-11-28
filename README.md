@@ -17,3 +17,6 @@ Settings → Pages → Deploy from branch → `main` / root.
 
 - Add phone and email to the contact card
 - Site address: https://b0to1q.github.io/BRAND-BY-G/ (after the repo is renamed to BRAND-BY-G)
+
+## When the own domain is live
+Replace `https://b0to1q.github.io/BRAND-BY-G/` everywhere it appears (canonical and og tags on every page, the business schema in `index.html`, `robots.txt`, `sitemap.xml`), then submit the sitemap in Google Search Console.
