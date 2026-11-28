@@ -301,7 +301,7 @@ a:focus-visible{outline:3px solid var(--acc);outline-offset:3px;border-radius:4p
 .mo .stage .s1{transform:translate3d(0,calc(var(--hp,0) * -40px),0)}
 .mo .stage .s2{transform:translate3d(calc(var(--hp,0) * 24px),calc(var(--hp,0) * -10px),0)}
 .mo .stage .s3{transform:translate3d(0,calc(var(--hp,0) * -110px),0) rotate(calc(var(--hp,0) * -2deg))}
-.mo .stage .s3 img{animation:phFloat 5s ease-in-out 1.4s infinite alternate}
+.mo .stage .s3{animation:stIn 1s cubic-bezier(.2,.7,.2,1) .28s both,phFloat 5s ease-in-out 1.5s infinite alternate}
 @keyframes phFloat{from{translate:0 0}to{translate:0 -6px}}
 /* work cards: each screenshot slowly scrolls through its site while on screen */
 .mo .tile.in .shot img{animation:tilePan calc(var(--d,6s) * 2.6) ease-in-out 1.2s infinite alternate;animation-delay:calc(1.2s + var(--i,0) * .7s)}
